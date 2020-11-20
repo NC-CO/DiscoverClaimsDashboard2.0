@@ -172,6 +172,7 @@ export function handleOutputStr(v1){
             arr[i] = arr[i].toString();
             arr[i] = arr[i]+'%'
         }
+
     }
     console.log("** " + arr);
     return arr;

@@ -45,6 +45,8 @@ class App extends Component {
         super(props);
         this.state = {
             car: '88',
+            qiPercentLeg: '',
+            qiPercentFor: '',
             metrics: [
                 {
                     "Legacy / Lookback": "Legacy data - number of accounts",
@@ -935,6 +937,8 @@ class App extends Component {
             sel.setState({kk14: ary[272]});
             sel.setState({kk15: ary[273]});
             sel.setState({kk16: ary[274]});
+            sel.setState({qiPercentLeg: ary[275]});
+            sel.setState({qiPercentFor: ary[276]});
         }).catch(function (error) {
             console.log(error);
         });
@@ -1643,12 +1647,6 @@ class App extends Component {
                                         <Input type="radio" name="radio1" value={this.state.csvButton} onChange={this.toggleCSV}/>{' '}
                                         CSV
                                     </Label>
-                                    <div>
-                                    <Label check>
-                                        <Input type="radio" name="radio1" value={this.state.pdfButton} onChange={this.togglePDF}/>{' '}
-                                        PDF
-                                    </Label>
-                                    </div>
                                     </FormGroup>
                                     <Button color="success" onClick={toggleSubmit}>Submit</Button>
                                 </Form>
@@ -2056,6 +2054,8 @@ class App extends Component {
                     this.setState({kk14: ar[264]});
                     this.setState({kk15: ar[265]});
                     this.setState({kk16: ar[266]});
+                    this.setState({qiPercentLeg: ar[267]});
+                    this.setState({qiPercentFor: ar[268]});
 
                 });
         });
@@ -2216,56 +2216,56 @@ class App extends Component {
                                 <tbody>
                                 <tr>
                                     <td>Client's Pursuable value</td>
-                                    <td>$1,042,100,000</td>
-                                    <td>$44,750,000</td>
+                                    <td>{this.state.l1}</td>
+                                    <td>{this.state.l4}</td>
                                     <td>Phase I</td>
                                 </tr>
                                 <tr>
                                     <td>Number of Pursuable accounts</td>
-                                    <td>366,292</td>
-                                    <td>15,729</td>
+                                    <td>{this.state.l2}</td>
+                                    <td>{this.state.w2}</td>
                                     <td>Phase I</td>
                                 </tr>
                                 <tr>
                                     <td>Average Visit Value (calculated from above)</td>
-                                    <td>$2,845</td>
-                                    <td>$2,845</td>
+                                    <td>{this.state.w3}</td>
+                                    <td>{this.state.w3}</td>
                                     <td>Phase I</td>
                                 </tr>
                                 <tr>
                                     <td>Average QI Value</td>
-                                    <td>$4,177</td>
-                                    <td>$4,177</td>
+                                    <td>{this.state.w6}</td>
+                                    <td>{this.state.w6}</td>
                                     <td>Phase I</td>
                                 </tr>
                                 <tr>
                                     <td>Actual Qualified Inventory</td>
-                                    <td>2.93%</td>
-                                    <td>3.00%</td>
+                                    <td>{this.state.metrics[6].Actual}</td>
+                                    <td>{this.state.metrics[6].Actual__1}</td>
                                     <td>Phase I</td>
                                 </tr>
                                 <tr>
                                     <td>Eligible for Insurance Discovery</td>
-                                    <td>51.25%</td>
-                                    <td>75%</td>
+                                    <td>{this.state.metrics[9].Actual}</td>
+                                    <td>{this.state.metrics[9].Actual__1}</td>
                                     <td>Phase I</td>
                                 </tr>
                                 <tr>
                                     <td>Courthouse Discovery Average Value</td>
-                                    <td>14,514</td>
-                                    <td>14,514</td>
+                                    <td>{this.state.metrics[23].Actual}</td>
+                                    <td>{this.state.metrics[23].Actual__1}</td>
                                     <td>Phase II</td>
                                 </tr>
                                 <tr>
                                     <td>Successful Insurance Discoveries</td>
-                                    <td>25%</td>
-                                    <td>25%</td>
+                                    <td>{this.state.metrics[16].Actual}</td>
+                                    <td>{this.state.metrics[16].Actual__1}</td>
                                     <td>Phase II</td>
                                 </tr>
                                 <tr>
                                     <td>Successful Courthouse Discoveries</td>
-                                    <td>3%</td>
-                                    <td>3%</td>
+                                    <td>{this.state.metrics[24].Actual}</td>
+                                    <td>{this.state.metrics[24].Actual__1}</td>
                                     <td>Phase II</td>
                                 </tr>
                                 <tr>
@@ -2355,7 +2355,7 @@ class App extends Component {
                         <Table responsive striped bordered hover style={{position: 'relative'}}>
                             <thead>
                                 <tr>
-                                    <th>Assuming Legacy Data Received 12/30/20</th>
+                                    <th>Assuming Legacy Data Received 12/30/2020</th>
                                     <th>Quarter Ending March 21</th>
                                     <th>Quarter Ending June 21</th>
                                     <th>Quarter Ending September 21</th>
@@ -2363,12 +2363,12 @@ class App extends Component {
                                     <th>Year Ending December 21</th>
                                     <th>Quarter Ending March 22</th>
                                     <th>Quarter Ending June 22</th>
-                                    <th>Quarter Ending  September 22</th>
+                                    <th>Quarter Ending September 22</th>
                                     <th>Quarter Ending December 22</th>
                                     <th>Year Ending December 22</th>
                                     <th>Quarter Ending March 23</th>
                                     <th>Quarter Ending June 23</th>
-                                    <th>Quarter Ending September 23</th>
+                                    <th>Quarter Ending  September 23</th>
                                     <th>Quarter Ending December 23</th>
                                     <th>Year Ending December 23</th>
                                     <th>Total Through December 23</th>
@@ -2617,16 +2617,16 @@ class App extends Component {
                                 <td>{this.state.l4}</td>
                                 <td>{this.state.l5}</td>
                                 <td>{this.state.l6}</td>
-                                <td>{this.state.primAnRes}</td>
+                                <td>{this.state.metrics[6].Actual}</td>
                                 <td></td>
-                                <td>2.50%</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>Eligible for Insurance Discovery</td>
                                 <td>{this.state.l8}</td>
                                 <td>{this.state.l9}</td>
                                 <td></td>
-                                <td>{this.state.elForInDisc}</td>
+                                <td>{this.state.metrics[9].Actual}</td>
                                 <td></td>
                                 <td></td>
                             </tr>
@@ -2635,7 +2635,7 @@ class App extends Component {
                                 <td>{this.state.l11}</td>
                                 <td>{this.state.l12}</td>
                                 <td>{this.state.l13}</td>
-                                <td>35.00%</td>
+                                <td>{this.state.metrics[16].Actual}</td>
                                 <td></td>
                                 <td></td>
                             </tr>
@@ -2653,7 +2653,7 @@ class App extends Component {
                                 <td>{this.state.l17}</td>
                                 <td>{this.state.l18}</td>
                                 <td>{this.state.l19}</td>
-                                <td>5.00%</td>
+                                <td>{this.state.metrics[24].Actual}</td>
                                 <td></td>
                                 <td></td>
                             </tr>
@@ -2715,12 +2715,12 @@ class App extends Component {
                                 <tr>
                                     <td>Lawsuit Liens year 3 - 20%</td>
                                     <td>Claims Liens year 3 - 8%</td>
-                                    <td></td>
+                                    <td>0%</td>
                                 </tr>
                                 <tr>
                                     <td>Lawsuit Liens year 3+ - 5%</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>0%</td>
+                                    <td>0%</td>
                                 </tr>
                             </tbody>
                         </Table>
@@ -2756,16 +2756,16 @@ class App extends Component {
                                     <td>{this.state.w4}</td>
                                     <td>{this.state.w5}</td>
                                     <td>{this.state.w6}</td>
-                                    <td>3.00%</td>
+                                    <td>{this.state.metrics[6].Actual__1}</td>
                                     <td></td>
-                                    <td>3.00%</td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <td>Eligible for Insurance Discovery</td>
                                     <td>{this.state.w8}</td>
                                     <td>{this.state.w9}</td>
                                     <td></td>
-                                    <td>75.00%</td>
+                                    <td>{this.state.metrics[9].Actual__1}</td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -2774,7 +2774,7 @@ class App extends Component {
                                     <td>{this.state.w11}</td>
                                     <td>{this.state.w12}</td>
                                     <td>{this.state.w13}</td>
-                                    <td>35.00%</td>
+                                    <td>{this.state.metrics[16].Actual__1}</td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -2792,7 +2792,7 @@ class App extends Component {
                                     <td>{this.state.w17}</td>
                                     <td>{this.state.w18}</td>
                                     <td>{this.state.w19}</td>
-                                    <td>5.00%</td>
+                                    <td>{this.state.metrics[24].Actual__1}</td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -2854,12 +2854,12 @@ class App extends Component {
                                 <tr>
                                     <td>Lawsuit Liens year 3 - 20%</td>
                                     <td>Claims Liens year 3 - 8%</td>
-                                    <td>Claim Bills year 2 - 10%</td>
+                                    <td>Claim Bills year 2 - 0%</td>
                                 </tr>
                                 <tr>
                                     <td>Lawsuit Liens year 3+ - 5%</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>0%</td>
+                                    <td>0%</td>
                                 </tr>
                                 </tbody>
                             </Table>

@@ -385,6 +385,9 @@ def main():
     en = str(shtCash.range('T115').value)
     eo = str(shtCash.range('U115').value)
 
+    ep = str(shtLeg.range('F6').value)
+    eq = str(shtFor.range('E6').value)
+
     print_to_stdout(a + '|' + b + '|' + c + '|' + d + '|'
                     + e + '|' + f + '|' + g + '|' + h + '|' + i + '|' + j +
                     '|' + k + '|' + l + '|' + m + '|' + n + '|' + o + '|' +
@@ -417,7 +420,7 @@ def main():
                     '|' + cd + '|' + ce + '|' + cf + '|' + cg + '|' + ch + '|' + ci + '|' + cj + '|' + ck + '|' + cl + '|' + cm + '|' + cn + '|' + co + '|' + cp + '|' + cq + '|' + cr + '|' + cs + '|' + ct + '|' + cu +
                     '|' + cv + '|' + cw + '|' + cx + '|' + cy + '|' + cz + '|' + da + '|' + db + '|' + dc + '|' + dd + '|' + de + '|' + df + '|' + dg + '|' + dh + '|' + di + '|' + dj + '|' + dk + '|' + dl + '|' + dm +
                     '|' + dn + '|' + do + '|' + dp + '|' + dq + '|' + dr + '|' + ds + '|' + dt + '|' + du + '|' + dv + '|' + dw + '|' + dx + '|' + dy + '|' + dz + '|' + ea + '|' + eb + '|' + ec + '|' + ed + '|' + ee +
-                    '|' + ef + '|' + eg + '|' + eh + '|' + ei + '|' + ej + '|' + ek + '|' + el + '|' + em + '|' + en + '|' + eo)
+                    '|' + ef + '|' + eg + '|' + eh + '|' + ei + '|' + ej + '|' + ek + '|' + el + '|' + em + '|' + en + '|' + eo + '|' + ep + '|' + eq)
 
 
 if __name__ == "__main__":
