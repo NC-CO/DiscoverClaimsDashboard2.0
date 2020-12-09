@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import ReactApexChart from 'react-apexcharts';
 import InlineEdit from 'react-ions/lib/components/InlineEdit';
-import {downloadFile, multiplyBy4, addRow, addTwo, divideBy4, divideBy, numberWithCommas, numberWithCommasSm, multiplywPer, multiply, multiplywPerBig, subtract, handleInputStr, handleOutputStr, handleStrFinal} from "./Functions";
+import {downloadFile, multiplyBy4, addRow, addTwo, divideBy4, divideBy, numberWithCommas, numberWithCommasSm, multiplywPer, multiply, multiplywPerBig, subtract, handleInputStr, handleOutputStr, handleStrFinal, handleMetricsOutput} from "./Functions";
 import {Dropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
@@ -40,6 +40,10 @@ const columns = [
     {dataField: 'Actual__1', text: 'Amount'},
     {dataField: 'Actual\" Timing & Comments', text: 'Actual Timing & Comments'},
 ]
+const columnsRates = [
+    {dataField: 'vendor', text : 'vendor'},
+    {dataField: 'rate', text : 'rate'}
+]
 class App extends Component {
     constructor(props) {
         super(props);
@@ -47,6 +51,15 @@ class App extends Component {
             car: '88',
             qiPercentLeg: '',
             qiPercentFor: '',
+            metricsTemp: [],
+            rates: [
+                {   "vendor": "Verisk",
+                    "rate": "$8.50"
+                },
+                {   "vendor": "Westlaw",
+                    "rate": "$0.30"
+                },
+            ],
             metrics: [
                 {
                     "Legacy / Lookback": "Legacy data - number of accounts",
@@ -694,11 +707,9 @@ class App extends Component {
         let sel = this;
         let i;
         axios.get("http://localhost:4000/",{}).then(function (response) {
-            let rd = response;
-            let srd = JSON.stringify(rd.data.dat)
-            srd = srd.substring(1, rd.length-3);
-            let ary = rd.data.dat.split("|");
-            sel.setState({metrics: rd.data.metrics})
+            let temp = handleMetricsOutput(response.data.metrics);
+            sel.setState({metrics: temp});
+            let ary = response.data.dat.split("|");
             for (i=0; i < ary.length; i++){
 
                 if(i > 7 && i < 88){
@@ -717,14 +728,14 @@ class App extends Component {
                 }
                 if(i > 87){
                     if(i !== 112 && i !== 117 && i !== 122 && i !== 124
-                    && i !== 149 && i !== 154 && i != 159 && i !== 161 && i !==178){
+                    && i !== 149 && i !== 154 && i !== 159 && i !== 161 && i !==178){
                         ary[i] = Number.parseFloat(ary[i]);
                         ary[i] = ary[i].toFixed(2);
                         ary[i] = ary[i].toString();
                         ary[i] = numberWithCommasSm(ary[i]);
                         let t = ary[i];
                         t = t.slice(-2);
-                        if(t == "00"){
+                        if(t === "00"){
                             ary[i] = ary[i].substring(0, ary[i].length-3)
                         }
                     }
@@ -940,8 +951,7 @@ class App extends Component {
             sel.setState({kk14: ary[272]});
             sel.setState({kk15: ary[273]});
             sel.setState({kk16: ary[274]});
-            sel.setState({qiPercentLeg: ary[275]});
-            sel.setState({qiPercentFor: ary[276]});
+
         }).catch(function (error) {
             console.log(error);
         });
@@ -1486,8 +1496,8 @@ class App extends Component {
                 }
             };
             return (
-                <div className="App" style={{margin: '0', height: '100vh', width: '100%'}} id={'pageID'}>
-                    <div style={{paddingTop: "1em"}}>
+                <div className="App" style={{margin: '0', height: '100vh', width: '100%'}} id={'pageID'} key={"SaveDivKey"}>
+                    <div style={{paddingTop: "1em"}} key={"saveDivKeyStylingOuter"}>
                         <Table borderless>
                             <tbody>
                                 <tr>
@@ -1496,7 +1506,7 @@ class App extends Component {
                             </tbody>
                         </Table>
                     </div>
-                    <div style={{position: 'fixed', right: '1em', top: '4em', zIndex: '2'}} id={'dd'}>
+                    <div style={{position: 'fixed', right: '1em', top: '4em', zIndex: '2'}} id={'dd'} key={"saveDivKeyStylingInner"}>
                         <Dropdown direction={'left'} isOpen={this.state.dropdownOpen} toggle={toggle1}>
                             <DropdownToggle color="primary" caret>
                                 Save
@@ -1511,9 +1521,9 @@ class App extends Component {
                                     </Collapse>
                                     <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked} key={Math.random()} onChange={this.sysCheckbox} label="System Numbers" />
                                     <Collapse isOpen={this.state.collapse3Open} style={{paddingBottom: '.25em'}}>
-                                        <div style={{paddingLeft: '2em', paddingRight:'1em'}}>
+                                        <div style={{paddingLeft: '2em', paddingRight:'1em'}} key={"saveDivKeyStylingInner1"}>
                                             <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked1} key={Math.random()} onChange={this.sysCheckbox1} label="Table 1" />
-                                            <div>
+                                            <div key={"saveDivKeyStylingInner2"}>
                                                 <Typography id="discrete-slider" gutterBottom>
                                                     Select Data Rows
                                                 </Typography>
@@ -1531,7 +1541,7 @@ class App extends Component {
                                                 />
                                             </div>
                                             <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked2} key={Math.random()} onChange={this.sysCheckbox2} label="Table 2" />
-                                            <div>
+                                            <div key={"saveDivKeyStylingInner3"}>
                                                 <Typography id="discrete-slider" gutterBottom>
                                                     Select Data Rows
                                                 </Typography>
@@ -1567,7 +1577,7 @@ class App extends Component {
                                                 />
                                             </div>
                                             <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked4} key={Math.random()} onChange={this.sysCheckbox4} label="Verisk / Westlaw Rates" />
-                                            <div>
+                                            <div key={"saveDivKeyStylingInner4"}>
                                                 <Typography id="discrete-slider" gutterBottom>
                                                     Select Data Rows
                                                 </Typography>
@@ -1606,7 +1616,7 @@ class App extends Component {
                                     </Collapse>
                                     <Form.Check defaultChecked={this.state.caCheckboxChecked} onChange={this.toggleCashBox} key={Math.random()} type="checkbox" label="Cash Flow" />
                                     <Collapse isOpen={this.state.collapse4Open} style={{paddingTop: '.4em', paddingBottom: '.25em'}}>
-                                        <div style={{paddingLeft: '2em',paddingRight: '1em'}}>
+                                        <div style={{paddingLeft: '2em',paddingRight: '1em'}} key={"saveDivKeyStylingCollapse1"}>
                                             <Typography id="discrete-slider" gutterBottom>
                                                 Select Data Rows
                                             </Typography>
@@ -1626,7 +1636,7 @@ class App extends Component {
                                     </Collapse>
                                     <Form.Check type="checkbox" defaultChecked={this.state.legCheckboxChecked} key={Math.random()} onChange={this.legCheckbox} label="CC Legacy Data" />
                                     <Collapse isOpen={this.state.collapse5Open} style={{paddingBottom: '.25em'}}>
-                                        <div style={{paddingLeft: '2em', paddingRight:'1em'}}>
+                                        <div style={{paddingLeft: '2em', paddingRight:'1em'}} key={"saveDivKeyStylingCollapse1"}>
                                             <Form.Check type="checkbox" defaultChecked={this.state.legCheckboxChecked1} key={Math.random()} onChange={this.legCheckbox1} label="Table 1" />
                                             <Typography id="discrete-slider" gutterBottom>
                                                 Select Data Rows
@@ -1663,7 +1673,7 @@ class App extends Component {
                                     </Collapse>
                                     <Form.Check type="checkbox" defaultChecked={this.state.forCheckboxChecked} key={Math.random()} onChange={this.forCheckbox} label="CC Forward Flow" />
                                     <Collapse isOpen={this.state.collapse6Open} style={{paddingBottom: '.25em'}}>
-                                        <div style={{paddingLeft: '2em', paddingRight:'1em'}}>
+                                        <div style={{paddingLeft: '2em', paddingRight:'1em'}} key={"saveDivKeyStylingCollapse3"}>
                                             <Form.Check type="checkbox"  defaultChecked={this.state.forCheckboxChecked1} key={Math.random()} onChange={this.forCheckbox1} label="Table 1" />
                                             <Typography id="discrete-slider" gutterBottom>
                                                 Select Data Rows
@@ -1856,9 +1866,17 @@ class App extends Component {
     }
     handleChange(oldValue, newValue, row, column) {
         let self = this;
-        axios.post("http://localhost:4000/", this.state.metrics).then(resp => {
-                self.setState({comebackk: resp.data}, function() {
+        let rowNum;
+        for (let i = 0; i < this.state.metrics.length; i++){
+            if(this.state.metrics[i] === row){
+                rowNum = i;
+            }
+        }
+        axios.post('http://localhost:4000/', {val: newValue, row: rowNum, col: column, met: this.state.metrics}).then(resp => {
+                self.setState({comebackk: resp.data.main, metricsTemp: resp.data.met}, function() {
                     let ar = handleOutputStr(this.state.comebackk);
+                    let temp = handleMetricsOutput(this.state.metricsTemp);
+                    this.setState({metrics: temp})
                     this.setState({b1: ar[0]});
                     this.setState({b2: ar[1]});
                     this.setState({b3: ar[2]});
@@ -2126,25 +2144,22 @@ class App extends Component {
                     this.setState({kk14: ar[264]});
                     this.setState({kk15: ar[265]});
                     this.setState({kk16: ar[266]});
-                    this.setState({qiPercentLeg: ar[267]});
-                    this.setState({qiPercentFor: ar[268]});
-
                 });
         });
     }
     tabsNov(){
         return(
-            <div style={{zIndex: '1'}} id={"here"}>
-                <Tabs>
-                    <TabList>
+            <div style={{zIndex: '1'}} id={"here"} key={"mainPageDiv"}>
+                <Tabs key={"mainTab"}>
+                    <TabList key={"mainTabList"}>
                         <Tab>Opportunity Assessment</Tab>
                         <Tab>Client's DC Results</Tab>
                         <Tab>Cash Flow</Tab>
                         <Tab>CC Legacy Data</Tab>
                         <Tab>CC Forward Flow</Tab>
                     </TabList>
-                    <TabPanel>
-                        <div style={{paddingBottom : '3em'}}>
+                    <TabPanel key={"opAssessTab"}>
+                        <div style={{paddingBottom : '3em'}} key={"OpAssesDiv"}>
                             <Table responsive striped bordered hover style={{position: 'relative'}}>
                                 <thead>
                                 <tr>
@@ -2191,8 +2206,8 @@ class App extends Component {
                             </Table>
                         </div>
                     </TabPanel>
-                    <TabPanel>
-                        <div style={{paddingBottom : '3em'}}>
+                    <TabPanel key={"SysNumsTab"}>
+                        <div style={{paddingBottom : '3em'}} key={"sysNumDiv"}>
                             <Table striped bordered hover style={{position: 'relative'}}>
                                 <thead>
                                 <tr>
@@ -2228,7 +2243,7 @@ class App extends Component {
                                 </tbody>
                             </Table>
                         </div>
-                        <div style={{paddingBottom : '3em'}}>
+                        <div style={{paddingBottom : '3em'}} key={"Table2Div"}>
                             <Table striped bordered hover style={{position: 'relative'}}>
                                 <thead>
                                 <tr>
@@ -2275,7 +2290,7 @@ class App extends Component {
                                 </thead>
                             </Table>
                         </div>
-                        <div style={{paddingBottom : '3em'}}>
+                        <div style={{paddingBottom : '3em'}} key={"Table3Div"}>
                             <Table striped bordered hover style={{position: 'relative'}}>
                                 <thead>
                                 <tr>
@@ -2397,21 +2412,18 @@ class App extends Component {
                                 </tbody>
                             </Table>
                         </div>
-                        <div style={{paddingRight : '130em', paddingBottom : '3em'}}>
-                            <Table>
-                                <tbody>
-                                <tr>
-                                    <th>Verisk Rate</th>
-                                    <td>$8.50</td>
-                                </tr>
-                                <tr>
-                                    <th>Westlaw Rate</th>
-                                    <td>$0.30</td>
-                                </tr>
-                                </tbody>
-                            </Table>
+                        <div style={{paddingRight : '130em', paddingBottom : '3em'}} key={"vendorTableDiv"}>
+                            <BootstrapTable
+                                striped
+                                hover
+                                keyField="Legacy / Lookback"
+                                data={ this.state.rates }
+                                columns={ columnsRates }
+                                cellEdit={ cellEditFactory({ mode: 'dbclick', beforeSaveCell, afterSaveCell: this.handleChange }) }
+                                key={"vendorTable"}
+                            />
                         </div>
-                        <div style={{paddingBottom : '3em'}}>
+                        <div style={{paddingBottom : '3em'}} key={"driverTableDiv"}>
                             <BootstrapTable
                                 striped
                                 hover
@@ -2419,10 +2431,11 @@ class App extends Component {
                                 data={ this.state.metrics }
                                 columns={ columns }
                                 cellEdit={ cellEditFactory({ mode: 'dbclick', beforeSaveCell, afterSaveCell: this.handleChange }) }
+                                key={"driverTable"}
                             />
                         </div>
                     </TabPanel>
-                    <TabPanel>
+                    <TabPanel key={"cashFlowTab"}>
                         <h2>Cash Flow Summary</h2>
                         <Table responsive striped bordered hover style={{position: 'relative'}}>
                             <thead>
@@ -2659,9 +2672,9 @@ class App extends Component {
                             </tbody>
                         </Table>
                     </TabPanel>
-                    <TabPanel>
+                    <TabPanel key={"legLookbackTab"}>
                         <h2>Legacy Look Back</h2>
-                        <div style={{paddingBottom: '3em'}}>
+                        <div style={{paddingBottom: '3em'}} key={"LegLookDiv"}>
                         <Table striped bordered hover style={{position: 'relative'}}>
                             <thead>
                             <tr>
@@ -2764,7 +2777,7 @@ class App extends Component {
                             </tbody>
                         </Table>
                         </div>
-                        <div style={{float: 'left', paddingLeft: '1em'}}>
+                        <div style={{float: 'left', paddingLeft: '1em'}} key={"bottomTableDiv"}>
                         <Table striped bordered hover style={{position: 'relative'}}>
                             <thead>
                                 <tr>
@@ -2798,9 +2811,9 @@ class App extends Component {
                         </Table>
                         </div>
                     </TabPanel>
-                    <TabPanel>
+                    <TabPanel key={"quartForwardFlTab"}>
                         <h2>Quarterly Forward Flow</h2>
-                        <div style={{paddingBottom: '3em'}}>
+                        <div style={{paddingBottom: '3em'}} key={"FFDiv"}>
                             <Table striped bordered hover style={{position: 'relative'}}>
                                 <thead>
                                 <tr>
@@ -2903,7 +2916,7 @@ class App extends Component {
                                 </tbody>
                             </Table>
                         </div>
-                        <div style={{float: 'left', paddingLeft: '1em', paddingBottom: '3em'}}>
+                        <div style={{float: 'left', paddingLeft: '1em', paddingBottom: '3em'}} key={"bottomTableDiv2"}>
                             <Table striped bordered hover style={{position: 'relative'}}>
                                 <thead>
                                 <tr>
@@ -2936,7 +2949,7 @@ class App extends Component {
                                 </tbody>
                             </Table>
                         </div>
-                        <div style={{paddingBottom:'5em'}}>
+                        <div style={{paddingBottom:'5em'}} key={"lastTableDiv"}>
                             <Table responsive striped bordered hover style={{position: 'relative'}}>
                                 <thead>
                                 <tr>

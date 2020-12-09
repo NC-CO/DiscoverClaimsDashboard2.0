@@ -10,25 +10,54 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post('/', function(req,res) {
-    let dog = req.body;
-    let cat = JSON.stringify(dog);
-    const spawn = require('child_process').spawn;
-    const pythonProcess = spawn('python',['test.py', cat]);
+    try {
+        let dog = req.body;
+        let val = req.body.val;
+        let col = req.body.col;
+        let colActual = col.dataField;
+        let row = req.body.row;
+        let metrics = req.body.met;
+        let cat = JSON.stringify(dog);
+        val = JSON.stringify(val);
+        row = JSON.stringify(row);
+        colActual = JSON.stringify(colActual);
+        const spawn = require('child_process').spawn;
+        const pythonProcess = spawn('python', ['test.py', val, row, colActual]);
         pythonProcess.stdout.on('data', (data) => {
             mainData = data.toString('ascii');
-            mainData = mainData.substring(1, mainData.length-3)
-            console.log(mainData);
+            mainData = mainData.substring(0, mainData.length - 2)
+            let ar = mainData.split('|');
+            let counter1 = 0;
+            for (let i = 0; i < metrics.length; i++) {
+                metrics[i].Actual = ar[267 + i + counter1]
+                metrics[i].Actual__1 = ar[268 + i + counter1]
+                counter1 += 1;
+            }
+            let counter2 = 0;
+            for (let i = 46; i < metrics.length; i++){
+                if(counter2 < 6){
+                    metrics[i].Actual = 'NA';
+                    metrics[i].Actual__1 = 'NA';
+                }else{
+                    metrics[i].Actual = 'to develop @ Phase 3';
+                    metrics[i].Actual__1 = 'to develop @ Phase 3';
+                }
+                counter2 += 1;
+            }
         });
 
-    setTimeout(function(){
-        pythonProcess.on('exit', code => {
-            console.log(`Exit code is: ${code}`);
-        });
-        fs.writeFile('savedState.json', "{\"dat\":\"0|0|0|0|0|0|0|0|"+mainData+"\",\"metrics\":"+""+cat+"}", function(err){
-            if (err) throw err;
-        });
-        res.send(mainData);
-    }, 2000);
+        setTimeout(function () {
+            pythonProcess.on('exit', code => {
+                console.log(`Exit code is: ${code}`);
+            });
+            fs.writeFile('savedState.json', "{\"dat\":\"0|0|0|0|0|0|0|0|" + mainData + "\",\"metrics\":" + "" + JSON.stringify(metrics) + "}", function (err) {
+                if (err) throw err;
+            });
+            res.json({main: mainData, met: metrics});
+        }, 2000);
+    } catch(error){
+        console.error(error);
+    }
 });
 
 app.get('/', function (req, res) {
@@ -36,7 +65,6 @@ app.get('/', function (req, res) {
     fs.readFile('savedState.json', function(err, data){
         if (err) throw err;
         temp = data.toString('ascii');
-        console.log('\n'+"HERE" + temp);
         res.send(temp);
     });
 });
