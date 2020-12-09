@@ -714,7 +714,7 @@ class App extends Component {
         let te;
         let sel = this;
         let i;
-        axios.get("http://localhost:4000/",{}).then(function (response) {
+        axios.get("http://10.45.4.200:4500/",{}).then(function (response) {
             let temp = handleMetricsOutput(response.data.metrics);
             sel.setState({metrics: temp});
             let ary = response.data.dat.split("|");
@@ -1896,8 +1896,7 @@ class App extends Component {
                 }
             }
         }
-        console.log(rowNum);
-        axios.post('http://localhost:4000/', {val: newValue, row: rowNum, col: column, met: this.state.metrics}).then(resp => {
+        axios.post('http://10.45.4.200:4500/', {val: newValue, row: rowNum, col: column, met: this.state.metrics}).then(resp => {
                 self.setState({comebackk: resp.data.main, metricsTemp: resp.data.met}, function() {
                     let ar = handleOutputStr(this.state.comebackk);
                     this.setState({rates:[
