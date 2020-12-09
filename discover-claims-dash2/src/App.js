@@ -702,6 +702,14 @@ class App extends Component {
         this.forCheckbox3 = this.forCheckbox3.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
+    nonEditRws(){
+        return ["Average Account Value","Qualified Inventory (\"QI\") - account value (average)","Qualified Inventory (\"QI\") - count as a % all Legacy Data",
+            "QI eligible for Verisk - as a percent of QI","Success / discovered rate - Verisk","Success / discovered rate - Courts",
+            "Recovered 1st Party opportunities as a % of opportunity count","Recovered 1st Party opportunities as a % of opportunity value",
+            "Recovered Pre-Lawsuit TPL opportunities as a % of opportunity count","Recovered Pre-Lawsuit TPL opportunities as a % of opportunity value",
+            "Recovered Lawsuit TPL opportunities as a percentage of opportunity count","Recovered Lawsuit TPL opportunities as a percentage of opportunity value"
+        ]
+    }
     componentDidMount() {
         let te;
         let sel = this;
@@ -752,10 +760,18 @@ class App extends Component {
                     || i===137 || i===143 || i===147 || i===152 || i===157 || i===162
                     || i===163 || i===166 || i===167 || i===168
                     || i===171 || i===172 || i===173 || i===174
-                    || i===175 || i===176 || i===177 ){
+                    || i===175 || i===176 || i===177    || i === ary.length-2 || i === ary.length-1){
                     ary[i] = '$'+ ary[i];
                 }
             }
+            sel.setState({rates:[
+                    {   "vendor": "Verisk",
+                        "rate": ary[ary.length-2]
+                    },
+                    {   "vendor": "Westlaw",
+                        "rate": ary[ary.length-1]
+                    },
+                ],});
             sel.setState({cc1: ary[0]}); sel.setState({cc2: ary[1]});
             sel.setState({cc3: ary[2]}); sel.setState({cc4: ary[3]});
             sel.setState({ucc1: ary[4]}); sel.setState({ucc2: ary[5]});
@@ -1185,7 +1201,7 @@ class App extends Component {
                     this.state.metrics[24].Actual+';'+this.state.metrics[24].Actual__1+';Phase II\n'+'Verisk 1st Party Find Rate;50%;50%;Phase II\nVerisk Pre-Lawsuit Find Rate (TPL);50%;50%;Phase II\n'+
                     'Approval (for accounts needing approval);90%;90%;Phase II\nRecovery Success Rate 1st party count;61%;61%;Phase III\nRecovery Success Rate Pre-Lawsuit TPL count;61%;61%;Phase III\n'+
                     'Recovery Success Rate Lawsuit TPL count;61%;61%;Phase III\nRecovery Success Rate 1st party value;35%;35%;Phase III\nRecovery Success Rate Pre-Lawsuit TPL value;35%;35%;Phase III\n'+
-                    'Recovery Success Rate Lawsuit TPL value;35%;35%;Phase III\n\n'+'Verisk Rate;$8.50\nWestlaw Rate;$0.30\n\n'+metricsCSV+'\n\n';
+                    'Recovery Success Rate Lawsuit TPL value;35%;35%;Phase III\n\n'+'Verisk Rate;'+this.state.rates[0].rate+'\nWestlaw Rate;'+this.state.rates[1].rate+'\n\n'+metricsCSV+'\n\n';
                 let cashData = 'Assuming Legacy Data Received 12/30/20;Quarter Ending March 21;Quarter Ending June 21;Quarter Ending September 21;Quarter Ending December 21;Year Ending December 21;Quarter Ending March 22;Quarter Ending June 22;'+
                     'Quarter Ending  September 22;Quarter Ending December 22;Year Ending December 22;Quarter Ending March 23;Quarter Ending June 23;Quarter Ending September 23;Quarter Ending December 23;Year Ending December 23;Total Through December 23\n'+
                     'Bills;'+this.state.b1+';'+this.state.b2+';'+this.state.b3+';'+this.state.b4+';'+this.state.b5+';'+this.state.b6+';'+this.state.b7+';'+this.state.b8+';'+this.state.b9+';'+this.state.b10+';'+this.state.b11+';'+this.state.b12+';'+this.state.b13+';'
@@ -1867,14 +1883,31 @@ class App extends Component {
     handleChange(oldValue, newValue, row, column) {
         let self = this;
         let rowNum;
-        for (let i = 0; i < this.state.metrics.length; i++){
-            if(this.state.metrics[i] === row){
-                rowNum = i;
+        if (column.dataField === "rate"){
+            for (let i = 0; i < this.state.rates.length; i++) {
+                if (this.state.rates[i] === row) {
+                    rowNum = i;
+                }
+            }
+        }else{
+            for (let i = 0; i < this.state.metrics.length; i++) {
+                if (this.state.metrics[i] === row) {
+                    rowNum = i;
+                }
             }
         }
+        console.log(rowNum);
         axios.post('http://localhost:4000/', {val: newValue, row: rowNum, col: column, met: this.state.metrics}).then(resp => {
                 self.setState({comebackk: resp.data.main, metricsTemp: resp.data.met}, function() {
                     let ar = handleOutputStr(this.state.comebackk);
+                    this.setState({rates:[
+                            {   "vendor": "Verisk",
+                                "rate": ar[ar.length-2]
+                            },
+                            {   "vendor": "Westlaw",
+                                "rate": ar[ar.length-1]
+                            },
+                        ],});
                     let temp = handleMetricsOutput(this.state.metricsTemp);
                     this.setState({metrics: temp})
                     this.setState({b1: ar[0]});
@@ -2412,11 +2445,11 @@ class App extends Component {
                                 </tbody>
                             </Table>
                         </div>
-                        <div style={{paddingRight : '130em', paddingBottom : '3em'}} key={"vendorTableDiv"}>
+                        <div style={{paddingRight : '80em', paddingBottom : '3em'}} key={"vendorTableDiv"}>
                             <BootstrapTable
                                 striped
                                 hover
-                                keyField="Legacy / Lookback"
+                                keyField="vendor"
                                 data={ this.state.rates }
                                 columns={ columnsRates }
                                 cellEdit={ cellEditFactory({ mode: 'dbclick', beforeSaveCell, afterSaveCell: this.handleChange }) }
@@ -2430,7 +2463,8 @@ class App extends Component {
                                 keyField="Legacy / Lookback"
                                 data={ this.state.metrics }
                                 columns={ columns }
-                                cellEdit={ cellEditFactory({ mode: 'dbclick', beforeSaveCell, afterSaveCell: this.handleChange }) }
+                                cellEdit={ cellEditFactory({ mode: 'dbclick', beforeSaveCell, afterSaveCell: this.handleChange,
+                                    nonEditableRows: this.nonEditRws }) }
                                 key={"driverTable"}
                             />
                         </div>

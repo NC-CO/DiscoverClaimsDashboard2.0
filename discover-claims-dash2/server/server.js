@@ -11,21 +11,21 @@ app.use(bodyParser.json());
 
 app.post('/', function(req,res) {
     try {
-        let dog = req.body;
         let val = req.body.val;
         let col = req.body.col;
         let colActual = col.dataField;
         let row = req.body.row;
         let metrics = req.body.met;
-        let cat = JSON.stringify(dog);
         val = JSON.stringify(val);
         row = JSON.stringify(row);
         colActual = JSON.stringify(colActual);
         const spawn = require('child_process').spawn;
+        console.log(colActual);
         const pythonProcess = spawn('python', ['test.py', val, row, colActual]);
         pythonProcess.stdout.on('data', (data) => {
             mainData = data.toString('ascii');
             mainData = mainData.substring(0, mainData.length - 2)
+            console.log(mainData);
             let ar = mainData.split('|');
             let counter1 = 0;
             for (let i = 0; i < metrics.length; i++) {

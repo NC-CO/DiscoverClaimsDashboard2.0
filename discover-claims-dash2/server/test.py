@@ -11,18 +11,25 @@ def print_to_stdout(*a):
 
 def column(val, rowNum, col):
     colLetter = ''
-    if col == "\"Actual\"":
-        colLetter = 'C'
-    else: colLetter = 'F'
-    rowNumActual = int(rowNum) + 46
-    cellCoord = colLetter + str(rowNumActual)
+    cellCoord = ''
+    if col == "\"rate\"":
+        colLetter = "B"
+        rowNumActual = int(rowNum) + 39
+        cellCoord = colLetter + str(rowNumActual)
+    else:
+        if col == "\"Actual\"":
+            colLetter = 'C'
+        else:
+            colLetter = 'F'
+        rowNumActual = int(rowNum) + 46
+        cellCoord = colLetter + str(rowNumActual)
+
     wb = xw.Book('PDOA.xlsx')
     shtDC = wb.sheets['Client\'s DC Results']
     shtCash = wb.sheets['Cash Flow']
     shtLeg = wb.sheets['CC & UCC Legacy Data']
     shtFor = wb.sheets['CC & UCC Forward Flow']
     shtOp = wb.sheets['Opportunity Assessment']
-    # a5 = str(shtLeg.range('B4').value)
     shtDC.range(cellCoord).value = val
 
     a = str(shtCash.range('F11').value)
@@ -384,6 +391,8 @@ def column(val, rowNum, col):
     ia = str(shtDC.range('F90').value)
     ib = str(shtDC.range('C91').value)
     ic = str(shtDC.range('F91').value)
+    idd = str(shtDC.range('B39').value)
+    ie = str(shtDC.range('B40').value)
 
     print_to_stdout(a + '|' + b + '|' + c + '|' + d + '|'
                     + e + '|' + f + '|' + g + '|' + h + '|' + i + '|' + j +
@@ -422,7 +431,7 @@ def column(val, rowNum, col):
                     '|' + fp + '|' + fq + '|' + fr + '|' + fs + '|' + ft + '|' + fu + '|' + fv + '|' + fw + '|' + fx + '|' + fy + '|' + fz + '|' + ga + '|' + gb + '|' + gc + '|' + gd + '|' + ge + '|' + gf + '|' + gg +
                     '|' + gh + '|' + gi + '|' + gj + '|' + gk + '|' + gl + '|' + gm + '|' + gn + '|' + go + '|' + gp + '|' + gq + '|' + gr + '|' + gs + '|' + gt + '|' + gu + '|' + gv + '|' + gw + '|' + gx + '|' + gy +
                     '|' + gz + '|' + ha + '|' + hb + '|' + hc + '|' + hd + '|' + he + '|' + hf + '|' + hg + '|' + hh + '|' + hi + '|' + hj + '|' + hk + '|' + hl + '|' + hm + '|' + hn + '|' + ho + '|' + hp + '|' + hq +
-                    '|' + hr + '|' + hs + '|' + ht + '|' + hu + '|' + hv + '|' + hw + '|' + hx + '|' + hy + '|' + hz + '|' + ia + '|' + ib + '|' + ic)
+                    '|' + hr + '|' + hs + '|' + ht + '|' + hu + '|' + hv + '|' + hw + '|' + hx + '|' + hy + '|' + hz + '|' + ia + '|' + ib + '|' + ic + '|' + idd + '|' + ie)
 
 
 def column0():
@@ -793,6 +802,8 @@ def column0():
     ia = str(shtDC.range('F90').value)
     ib = str(shtDC.range('C91').value)
     ic = str(shtDC.range('F91').value)
+    idd = str(shtDC.range('B39').value)
+    ie = str(shtDC.range('B40').value)
 
     print_to_stdout(a + '|' + b + '|' + c + '|' + d + '|'
                     + e + '|' + f + '|' + g + '|' + h + '|' + i + '|' + j +
@@ -831,28 +842,17 @@ def column0():
                     '|' + fp + '|' + fq + '|' + fr + '|' + fs + '|' + ft + '|' + fu + '|' + fv + '|' + fw + '|' + fx + '|' + fy + '|' + fz + '|' + ga + '|' + gb + '|' + gc + '|' + gd + '|' + ge + '|' + gf + '|' + gg +
                     '|' + gh + '|' + gi + '|' + gj + '|' + gk + '|' + gl + '|' + gm + '|' + gn + '|' + go + '|' + gp + '|' + gq + '|' + gr + '|' + gs + '|' + gt + '|' + gu + '|' + gv + '|' + gw + '|' + gx + '|' + gy +
                     '|' + gz + '|' + ha + '|' + hb + '|' + hc + '|' + hd + '|' + he + '|' + hf + '|' + hg + '|' + hh + '|' + hi + '|' + hj + '|' + hk + '|' + hl + '|' + hm + '|' + hn + '|' + ho + '|' + hp + '|' + hq +
-                    '|' + hr + '|' + hs + '|' + ht + '|' + hu + '|' + hv + '|' + hw + '|' + hx + '|' + hy + '|' + hz + '|' + ia + '|' + ib + '|' + ic)
+                    '|' + hr + '|' + hs + '|' + ht + '|' + hu + '|' + hv + '|' + hw + '|' + hx + '|' + hy + '|' + hz + '|' + ia + '|' + ib + '|' + ic + '|' + idd + '|' + ie)
 
 def main():
     val = sys.argv[1]
     val = val[1:len(val)-1]
     rowNum = sys.argv[2]
     col = sys.argv[3]
-    if col == "\"Actual\"" or col == "\"Actual__1\"":
+    if col == "\"Actual\"" or col == "\"Actual__1\"" or col == "\"rate\"":
         column(val, rowNum, col)
     else:
         column0()
-
-    #send in newValue | column | row DONE
-    #have logic to find cell to plug in for
-    #plug in for that cell
-    #pull out entire table
-    #set metrics[x].blah = to returned
-    #done
-
-
-
-
 
 
 if __name__ == "__main__":
