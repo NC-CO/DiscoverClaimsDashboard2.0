@@ -19,6 +19,7 @@ import html2canvas from 'html2canvas';
 import { jsPDF } from "jspdf";
 import BootstrapTable from 'react-bootstrap-table-next';
 import cellEditFactory from 'react-bootstrap-table2-editor';
+import Client2 from "./Client2";
 
 function beforeSaveCell(oldValue, newValue, row, column, done) {
     setTimeout(() => {
@@ -476,110 +477,110 @@ class App extends Component {
                     "Actual\" Timing & Comments": "follows liquidation curves and values",
                 },
                 {
-                    "Legacy / Lookback": "*Closed No Recovery 1st Party opportunities - count",
+                    "Legacy / Lookback": "Closed no recovery claims count",
                     "Phase": "",
                     "Actual": "NA",
                     "Actual Timing & Comments": "follows liquidation curve",
-                    "Forward Flow": "*Closed No Recovery 1st Party opportunities - count",
+                    "Forward Flow": "Closed no recovery claims count",
                     "Actual__1": "NA",
                     "Actual\" Timing & Comments": "follows liquidation curve",
                 },
                 {
-                    "Legacy / Lookback": "*Closed No Recovery 1st Party opportunities - value",
+                    "Legacy / Lookback": "Closed no recovery claims value",
                     "Phase": "",
                     "Actual": "NA",
                     "Actual Timing & Comments": "follows liquidation curve",
-                    "Forward Flow": "*Closed No Recovery 1st Party opportunities - value",
+                    "Forward Flow": "Closed no recovery claims value",
                     "Actual__1": "NA",
                     "Actual\" Timing & Comments": "follows liquidation curve",
                 },
                 {
-                    "Legacy / Lookback": "*Closed No Recovery Pre Lawsuit TPL opportunities - count (Verisk)",
+                    "Legacy / Lookback": "Closed no recovery liens count",
                     "Phase": "",
                     "Actual": "NA",
                     "Actual Timing & Comments": "follows liquidation curve",
-                    "Forward Flow": "*Closed No Recovery Pre Lawsuit TPL opportunities - count (Verisk)",
+                    "Forward Flow": "Closed no recovery liens count",
                     "Actual__1": "NA",
                     "Actual\" Timing & Comments": "follows liquidation curve",
                 },
                 {
-                    "Legacy / Lookback": "*Closed No Recovery Pre-Lawsuit TPL opportunities - value (Verisk)",
+                    "Legacy / Lookback": "Closed no recovery liens value",
                     "Phase": "",
                     "Actual": "NA",
                     "Actual Timing & Comments": "follows liquidation curve",
-                    "Forward Flow": "*Closed No Recovery Pre-Lawsuit TPL opportunities - value (Verisk)",
+                    "Forward Flow": "Closed no recovery liens value",
                     "Actual__1": "NA",
                     "Actual\" Timing & Comments": "follows liquidation curve",
                 },
                 {
-                    "Legacy / Lookback": "*Closed No Recovery Lawsuit TPL opportunities - count (Courts)",
+                    "Legacy / Lookback": "Closed no recovery lawsuits count",
                     "Phase": "",
                     "Actual": "NA",
                     "Actual Timing & Comments": "follows liquidation curve",
-                    "Forward Flow": "*Closed No Recovery Lawsuit TPL opportunities - count (Courts)",
+                    "Forward Flow": "Closed no recovery lawsuits count",
                     "Actual__1": "NA",
                     "Actual\" Timing & Comments": "follows liquidation curve",
                 },
                 {
-                    "Legacy / Lookback": "*Closed No Recovery Lawsuit TPL opportunities - value (Courts)",
+                    "Legacy / Lookback": "Closed no recovery lawsuits value",
                     "Phase": "",
                     "Actual": "NA",
                     "Actual Timing & Comments": "follows liquidation curve",
-                    "Forward Flow": "*Closed No Recovery Lawsuit TPL opportunities - value (Courts)",
+                    "Forward Flow": "Closed no recovery lawsuits value",
                     "Actual__1": "NA",
                     "Actual\" Timing & Comments": "follows liquidation curve",
                 },
                 {
-                    "Legacy / Lookback": "Open Active 1st Party opportunities - count",
+                    "Legacy / Lookback": "Open active bills count",
                     "Phase": "",
                     "Actual": "to develop @ Phase 3",
                     "Actual Timing & Comments": "Utilize existing metrics to estimate remaining revenue",
-                    "Forward Flow": "Open Active 1st Party opportunities - count",
+                    "Forward Flow": "Open active bills count",
                     "Actual__1": "to develop @ Phase 3",
                     "Actual\" Timing & Comments": "Utilize existing metrics to estimate remaining revenue",
                 },
                 {
-                    "Legacy / Lookback": "Open Active 1st Party opportunities - value",
+                    "Legacy / Lookback": "Open active bills value",
                     "Phase": "",
                     "Actual": "to develop @ Phase 3",
                     "Actual Timing & Comments": "Utilize existing metrics to estimate remaining revenue",
-                    "Forward Flow": "Open Active 1st Party opportunities - value",
+                    "Forward Flow": "Open active bills value",
                     "Actual__1": "to develop @ Phase 3",
                     "Actual\" Timing & Comments": "Utilize existing metrics to estimate remaining revenue",
                 },
                 {
-                    "Legacy / Lookback": "Open Active Pre Lawsuit TPL opportunities - count (Verisk)",
+                    "Legacy / Lookback": "Open active liens count",
                     "Phase": "",
                     "Actual": "to develop @ Phase 3",
                     "Actual Timing & Comments": "Utilize existing metrics to estimate remaining revenue",
-                    "Forward Flow": "Open Active Pre Lawsuit TPL opportunities - count (Verisk)",
+                    "Forward Flow": "Open active liens count",
                     "Actual__1": "to develop @ Phase 3",
                     "Actual\" Timing & Comments": "Utilize existing metrics to estimate remaining revenue",
                 },
                 {
-                    "Legacy / Lookback": "Open Active Pre-Lawsuit TPL opportunities - value (Verisk)",
+                    "Legacy / Lookback": "Open active liens value",
                     "Phase": "",
                     "Actual": "to develop @ Phase 3",
                     "Actual Timing & Comments": "Utilize existing metrics to estimate remaining revenue",
-                    "Forward Flow": "Open Active Pre-Lawsuit TPL opportunities - value (Verisk)",
+                    "Forward Flow": "Open active liens value",
                     "Actual__1": "to develop @ Phase 3",
                     "Actual\" Timing & Comments": "Utilize existing metrics to estimate remaining revenue",
                 },
                 {
-                    "Legacy / Lookback": "Open Active Lawsuit TPL opportunities - count (Courts)",
+                    "Legacy / Lookback": "Open active lawsuits count",
                     "Phase": "",
                     "Actual": "to develop @ Phase 3",
                     "Actual Timing & Comments": "Utilize existing metrics to estimate remaining revenue",
-                    "Forward Flow": "Open Active Lawsuit TPL opportunities - count (Courts)",
+                    "Forward Flow": "Open active lawsuits count",
                     "Actual__1": "to develop @ Phase 3",
                     "Actual\" Timing & Comments": "Utilize existing metrics to estimate remaining revenue",
                 },
                 {
-                    "Legacy / Lookback": "Open Active Lawsuit TPL opportunities - value (Courts)",
+                    "Legacy / Lookback": "Open active lawsuits value",
                     "Phase": "",
                     "Actual": "to develop @ Phase 3",
                     "Actual Timing & Comments": "Utilize existing metrics to estimate remaining revenue",
-                    "Forward Flow": "Open Active Lawsuit TPL opportunities - value (Courts)",
+                    "Forward Flow": "Open active lawsuits value",
                     "Actual__1": "to develop @ Phase 3",
                     "Actual\" Timing & Comments": "Utilize existing metrics to estimate remaining revenue",
                 }
@@ -714,7 +715,7 @@ class App extends Component {
         let te;
         let sel = this;
         let i;
-        axios.get("http://10.45.4.200:4500/",{}).then(function (response) {
+        axios.get("http://localhost:4500/",{}).then(function (response) {
             let temp = handleMetricsOutput(response.data.metrics);
             sel.setState({metrics: temp});
             let ary = response.data.dat.split("|");
@@ -1166,593 +1167,9 @@ class App extends Component {
     }
     render(){
         if(this.state.clients === "Opportunity Assessment Calculator"){
-            const toggle1 = () => {
-                const current = this.state.dropdownOpen;
-                this.setState({dropdownOpen: !current});
-
-            };
-            const togglePDF = () => {
-                const current8 = this.state.pdfClicked;
-                this.setState({pdfClicked: true});
-                this.setState({csvClicked: false});
-            }
-            const toggleSubmit = () => {
-                const { Parser } = require('json2csv');
-                const json2csvParser = new Parser({ delimiter: ';' });
-                const metricsCSV = json2csvParser.parse(this.state.metrics);
-                let sep = 'sep=;\n';
-                let opAssData = 'Quarterly Client Data;Estimated Legacy Recovery;Legacy Data - Verisk Count; Legacy Data - West Law Count; ' +
-                    'One Time (Legacy) Verisk Cost;One Time (Legacy) Westlaw Cost;One Time Total Legacy Data Cost;Qtrly Forward Flow Accts - Verisk;' +
-                    'Qtrly Forward Flow Accts - Westlaw;Quarterly Forward Flow - Verisk Cost; Quarterly Forward Flow - Westlaw Cost; ' +
-                    'Verisk and Westlaw Forward Flow Quarterly Cost; Quarterly - Client Potential Recovery;' + 'Overall - Client Potential Recovery;' +
-                    'Total UCC & CC Charges; Discover Claims EBITDA Return;Discover Claims EBITDA Return %' + '\n' +
-                    this.state.v1 + ';' + this.state.v2 + ';' + this.state.v3 + ';' + this.state.v4 + ';' + this.state.v5 + ';' + this.state.v6 + ';' + this.state.v7 +
-                    ';' + this.state.v8 + ';' + this.state.v9 + ';' + this.state.v10 + ';' + this.state.v11 + ';' + this.state.v12 + ';' +
-                    this.state.v13 + ';' + this.state.v14 + ';' + this.state.v15 + ';' + this.state.v16 + ';' + this.state.v17 +'\n'+'\n';
-                let sysData = ';2019 Billed Charges;Estimated Annual;Estimated Legacy;Estimated Quarterly Value\nCC Charges;'+'$91,200,000'+';'+'$91,200,000'+';'+'$736,700,000'+';'+'$22,800,000\n'
-                    +'UCC Charges;'+'$87,800,000'+';'+'$87,800,000'+';'+'$305,400,000'+';'+'$21,950,000\n'
-                    +'Total;'+ '$179,000,000'+';'+'$179,000,000'+';'+'$1,042,100,000'+';'+'$44,750,000\n\n'+
-                    'Year;2016;2017;2018;2019;Total\nCharity Charges;$432,000,000;$105,000,000;$108,500,000;$91,200,000;$736,700,000\nUCC - Non-Medicare & Non-Reimbursable Bad Debt Costs;$16,000,000;$16,500,000;$21,900,000;$21,950,000;$76,350,000' +
-                    '\nUCC Charges;$64,000,000;$66,000,000;$87,600,000;$87,800,000;$305,400,000\nTotal;;;;$179,000,000;$1,042,100,000\n\n'+'Client Values;Legacy Accounts;Quarterly Forward Flow;Phase\n'+
-                    'Client\'s Pursuable value;'+this.state.l1+';'+this.state.l4+';'+'Phase I\n'+'Number of Pursuable accounts;'+this.state.l2+';'+this.state.w2+';Phase I\n'+'Average Visit Value (calculated from above);'+
-                    this.state.w3+';'+this.state.w3+';Phase I\n'+'Average QI Value;'+this.state.w6+';'+this.state.w6+';Phase I\n'+'Actual Qualified Inventory;'+this.state.metrics[6].Actual+';'+this.state.metrics[6].Actual__1+';'+
-                    'Phase I\n'+'Eligible for Insurance Discovery;'+this.state.metrics[9].Actual+';'+this.state.metrics[9].Actual__1+';'+'Phase I\n'+ 'Courthouse Discovery Average Value;'+this.state.metrics[23].Actual+';'+
-                    this.state.metrics[23].Actual__1+';Phase II\n'+'Successful Insurance Discoveries;'+this.state.metrics[16].Actual+';'+this.state.metrics[16].Actual__1+';Phase II\n'+'Successful Courthouse Discoveries;'+
-                    this.state.metrics[24].Actual+';'+this.state.metrics[24].Actual__1+';Phase II\n'+'Verisk 1st Party Find Rate;50%;50%;Phase II\nVerisk Pre-Lawsuit Find Rate (TPL);50%;50%;Phase II\n'+
-                    'Approval (for accounts needing approval);90%;90%;Phase II\nRecovery Success Rate 1st party count;61%;61%;Phase III\nRecovery Success Rate Pre-Lawsuit TPL count;61%;61%;Phase III\n'+
-                    'Recovery Success Rate Lawsuit TPL count;61%;61%;Phase III\nRecovery Success Rate 1st party value;35%;35%;Phase III\nRecovery Success Rate Pre-Lawsuit TPL value;35%;35%;Phase III\n'+
-                    'Recovery Success Rate Lawsuit TPL value;35%;35%;Phase III\n\n'+'Verisk Rate;'+this.state.rates[0].rate+'\nWestlaw Rate;'+this.state.rates[1].rate+'\n\n'+metricsCSV+'\n\n';
-                let cashData = 'Assuming Legacy Data Received 12/30/20;Quarter Ending March 21;Quarter Ending June 21;Quarter Ending September 21;Quarter Ending December 21;Year Ending December 21;Quarter Ending March 22;Quarter Ending June 22;'+
-                    'Quarter Ending  September 22;Quarter Ending December 22;Year Ending December 22;Quarter Ending March 23;Quarter Ending June 23;Quarter Ending September 23;Quarter Ending December 23;Year Ending December 23;Total Through December 23\n'+
-                    'Bills;'+this.state.b1+';'+this.state.b2+';'+this.state.b3+';'+this.state.b4+';'+this.state.b5+';'+this.state.b6+';'+this.state.b7+';'+this.state.b8+';'+this.state.b9+';'+this.state.b10+';'+this.state.b11+';'+this.state.b12+';'+this.state.b13+';'
-                    +this.state.b14+';'+this.state.b15+';'+this.state.b16+'\n'+'Liens;'+this.state.c1+';'+this.state.c2+';'+this.state.c3+';'+this.state.c4+';'+this.state.c5+';'+this.state.c6+';'+this.state.c7+';'+this.state.c8+';'+this.state.c9+';'+this.state.c10+';'
-                    +this.state.c11+';'+this.state.c12+';'+this.state.c13+';'+this.state.c14+';'+this.state.c15+';'+this.state.c16+'\n'+'Lawsuits;'+this.state.d1+';'+this.state.d2+';'+this.state.d3+';'+this.state.d4+';'+this.state.d5+';'+this.state.d6+';'+this.state.d7+';'
-                    +this.state.d8+';'+this.state.d9+';'+this.state.d10+';'+this.state.d11+';'+this.state.d12+';'+this.state.d13+';'+this.state.d14+';'+this.state.d15+';'+this.state.d16+'\n'+'Total;'+this.state.e1+';'+this.state.e2+';'+this.state.e3+';'+this.state.e4+';'
-                    +this.state.e5+';'+this.state.e6+';'+this.state.e7+';'+this.state.e8+';'+this.state.e9+';'+this.state.e10+';'+this.state.e11+';'+this.state.e12+';'+this.state.e13+';'+this.state.e14+';'+this.state.e15+';'+this.state.e16+'\n'+'Net to Client 65%;'+
-                    this.state.f1+';'+this.state.f2+';'+this.state.f3+';'+this.state.f4+';'+this.state.f5+';'+this.state.f6+';'+this.state.f7+';'+this.state.f8+';'+this.state.f9+';'+this.state.f10+';'+this.state.f11+';'+this.state.f12+';'+this.state.f13+';'+this.state.f14+';'
-                    +this.state.f15+';'+this.state.f16+'\n'+'Discover Gross;'+this.state.g1+';'+this.state.g2+';'+this.state.g3+';'+this.state.g4+';'+this.state.g5+';'+this.state.g6+';'+this.state.g7+';'+this.state.g8+';'+this.state.g9+';'+this.state.g10+';'+this.state.g11+';'
-                    +this.state.g12+';'+this.state.g13+';'+this.state.g14+';'+this.state.g15+';'+this.state.g16+'\n'+'Processing Fee @10%;'+this.state.h1+';'+this.state.h2+';'+this.state.h3+';'+this.state.h4+';'+this.state.h5+';'+this.state.h6+';'+this.state.h7+';'
-                    +this.state.h8+';'+this.state.h9+';'+this.state.h10+';'+this.state.h11+';'+this.state.h12+';'+this.state.h13+';'+this.state.h14+';'+this.state.h15+';'+this.state.h16+'\n'+'Agent Fee @ 6% of DC Net;'+this.state.i1+';'+this.state.i2+';'+this.state.i3+';'
-                    +this.state.i4+';'+this.state.i5+';'+this.state.i6+';'+this.state.i7+';'+this.state.i8+';'+this.state.i9+';'+this.state.i10+';'+this.state.i11+';'+this.state.i12+';'+this.state.i13+';'+this.state.i14+';'+this.state.i15+';'+this.state.i16+'\n'+
-                    'Data Cost;'+this.state.j1+';'+this.state.j2+';'+this.state.j3+';'+this.state.j4+';'+this.state.j5+';'+this.state.j6+';'+this.state.j7+';'+this.state.j8+';'+this.state.j9+';'+this.state.j10+';'+this.state.j11+';'+this.state.j12+';'+this.state.j13+';'
-                    +this.state.j14+';'+this.state.j15+';'+this.state.j16+'\n'+'Total Cost;;'+this.state.k2+';'+this.state.k3+';'+this.state.k4+';'+this.state.k5+';'+this.state.k6+';'+this.state.k7+';'+this.state.k8+';'+this.state.k9+';'+this.state.k10+';'+this.state.k11+';'
-                    +this.state.k12+';'+this.state.k13+';'+this.state.k14+';'+this.state.k15+';'+this.state.k16+'\n'+'Discover Claims EBITDA Return;'+this.state.kk1+';'+this.state.kk2+';'+this.state.kk3+';'+this.state.kk4+';'+this.state.kk5+';'+this.state.kk6+';'+this.state.kk7+';'
-                    +this.state.kk8+';'+this.state.kk9+';'+this.state.kk10+';'+this.state.kk11+';'+this.state.kk12+';'+this.state.kk13+';'+this.state.kk14+';'+this.state.kk15+';'+this.state.kk16+'\n\n';
-                let legData = 'Stage;Total Billed Charges Charity;Number of Patient Accounts;Average Value;As a % of Previous Stage;Cash Recovery;% of Total UCC\n'+'No Patient Contact or TPL Insurance Found;'+this.state.l1+';'+this.state.l2+';'+this.state.l3+';;;100%\n'+
-                    'Qualified Inventory \"QI\";'+this.state.l4+';'+this.state.l5+';'+this.state.l6+';'+this.state.metrics[6].Actual+';;\n'+'Eligible for Insurance Discovery;'+this.state.l8+';'+this.state.l9+';;'+this.state.metrics[9].Actual+';;;\n'+'Successful Insurance Discoveries;'+
-                    this.state.l11+';'+this.state.l12+';'+this.state.l13+';'+this.state.metrics[16].Actual+ ';;;\n'+'Eligible for Courthouse Discovery;'+this.state.l15+';'+this.state.l16+';;Calculation;;;\n'+'Successful Courthouse Discoveries;'+this.state.l17+';'+this.state.l18+';'+this.state.l19+';' + this.state.metrics[24].Actual +';;;\n'
-                    +'Bills - 1st Party Insurance Claims (Insurance Discoveries);'+this.state.l21+';'+this.state.l22+';'+this.state.l23+';'+'Recovered Value @ 35% of billed charges;'+this.state.l24+';'+this.state.l25+'\n'+'Liens - 3rd Party Claims & Lawsuits (Insurance Discoveries);'
-                    +this.state.l26+';'+this.state.l27+';'+this.state.l28+';'+'Recovered Value @ 35% of billed charges;'+this.state.l29+';'+this.state.l30+'\n'+'Liens - Lawsuit (Courthouse Discoveries);'+this.state.l31+';'+this.state.l32+';'+this.state.l33+';'+
-                    'Recovered Value @ 35% of billed charges;'+this.state.l34+';'+this.state.l35+'\n'+';;;;Total Recovery;'+this.state.l36+';'+this.state.l37+'\n\nRecovery Period Lawsuit Liens;Recovery Period Claims Liens;Recovery Period Claim Bills;\nLawsuit Liens year 1 - 50%;'+
-                    'Claims Liens year 1 - 50%;Claim Bills year 1 - 90%\nLawsuit Liens year 2 - 25%;Claims Liens year 2 - 42%;Claim Bills year 2 - 10%\nLawsuit Liens year 3 - 20%;Claims Liens year 3 - 8%;0%;\nLawsuit Liens year 3+ - 5%;0%;0%;\n\n'
-                let forData = 'Stage;Total Billed Charges Charity;Number of Patient Accounts;Average Value;As a % of Previous Stage;Cash Recovery;% of Total UCC\n'+'No Patient Contact or TPL Insurance Found;'+this.state.w1+';'+this.state.w2+';'+this.state.w3+';;;100%\n'+
-                    'Qualified Inventory \"QI\";'+this.state.w4+';'+this.state.w5+';'+this.state.w6+';'+this.state.metrics[6].Actual__1+';;2.50%\n'+'Eligible for Insurance Discovery;'+this.state.w8+';'+this.state.w9+';;'+this.state.metrics[9].Actual__1+';;;\n'+'Successful Insurance Discoveries;'+
-                    this.state.w11+';'+this.state.w12+';'+this.state.w13+';'+this.state.metrics[16].Actual__1+';;;\n'+'Eligible for Courthouse Discovery;'+this.state.w15+';'+this.state.w16+';;Calculation;;;\n'+'Successful Courthouse Discoveries;'+this.state.w17+';'+this.state.w18+';'+this.state.w19+';'+this.state.metrics[24].Actual__1+';;;\n'
-                    +'Bills - 1st Party Insurance Claims (Insurance Discoveries);'+this.state.w21+';'+this.state.w22+';'+this.state.w23+';'+'Recovered Value @ 35% of billed charges;'+this.state.w24+';'+this.state.w25+'\n'+'Liens - 3rd Party Claims & Lawsuits (Insurance Discoveries);'
-                    +this.state.w26+';'+this.state.w27+';'+this.state.w28+';'+'Recovered Value @ 35% of billed charges;'+this.state.w29+';'+this.state.w30+'\n'+'Liens - Lawsuit (Courthouse Discoveries);'+this.state.w31+';'+this.state.w32+';'+this.state.w33+';'+
-                    'Recovered Value @ 35% of billed charges;'+this.state.w34+';'+this.state.w35+'\n'+';;;;Total Recovery;'+this.state.w36+';'+this.state.w37+'\n\n'+'Recovery Period Lawsuit Liens;Recovery Period Claims Liens;Recovery Period Claim Bills\n'+
-                    'Lawsuit Liens year 1 - 50%;Claims Liens year 1 - 50%;Claim Bills year 1 - 90%\nLawsuit Liens year 2 - 25%;Claims Liens year 2 - 42%;Claim Bills year 2 - 10%\nLawsuit Liens year 3 - 20%;Claims Liens year 3 - 8%;0%\n'+
-                    'Lawsuit Liens year 3+ - 5%;0%;0%;\n\n'+'Quarter 1;Quarter 2;Quarter 3;Quarter 4;Year 1;Quarter 5;Quarter 6;Quarter 7;Quarter 8;Year 2;Quarter 9;Quarter 10;Quarter 11;Quarter 12;Year 3;Year 3+ Remaining\n'+'Recovery Period Claim Bills;0.000%;'+
-                    '27.000%;29.700%;33.300%;90.000%;2.800%;2.700%;2.700%;1.800%;10.000%;0.000%;0.000%;0.000%;0.000%;0.000%;0.000%\nRecovery Period Claim Liens;0.000%;12.500%;15.000%;22.500%;50.000%;21.250%;14.500%;3.750%;2.500%;42.000%;2.100%;2.100%;2.100%;'+
-                    '1.700%;8.000%;0.000%\nRecovery Period Lawsuit Liens;0.000%;12.500%;15.000%;22.500%;50.000%;8.250%;8.250%;4.500%;4.000%;25.000%;5.000%;5.000%;5.000%;5.000%;20.000%;5.000%\n\n';
-                let cashHeader = 'Assuming Legacy Data Received 12/30/20;Quarter Ending March 21;Quarter Ending June 21;Quarter Ending September 21;Quarter Ending December 21;Year Ending December 21;Quarter Ending March 22;Quarter Ending June 22;'+
-                    'Quarter Ending  September 22;Quarter Ending December 22;Year Ending December 22;Quarter Ending March 23;Quarter Ending June 23;Quarter Ending September 23;Quarter Ending December 23;Year Ending December 23;Total Through December 23\n';
-                let cashRow1 = 'Bills;'+this.state.b1+';'+this.state.b2+';'+this.state.b3+';'+this.state.b4+';'+this.state.b5+';'+this.state.b6+';'+this.state.b7+';'+this.state.b8+';'+this.state.b9+';'+this.state.b10+';'+this.state.b11+';'+this.state.b12+';'+this.state.b13+';'
-                    +this.state.b14+';'+this.state.b15+';'+this.state.b16+'\n';
-                let cashRow2 = 'Liens;'+this.state.c1+';'+this.state.c2+';'+this.state.c3+';'+this.state.c4+';'+this.state.c5+';'+this.state.c6+';'+this.state.c7+';'+this.state.c8+';'+this.state.c9+';'+this.state.c10+';'
-                    +this.state.c11+';'+this.state.c12+';'+this.state.c13+';'+this.state.c14+';'+this.state.c15+';'+this.state.c16+'\n';
-                let cashRow3 = 'Lawsuits;'+this.state.d1+';'+this.state.d2+';'+this.state.d3+';'+this.state.d4+';'+this.state.d5+';'+this.state.d6+';'+this.state.d7+';'
-                    +this.state.d8+';'+this.state.d9+';'+this.state.d10+';'+this.state.d11+';'+this.state.d12+';'+this.state.d13+';'+this.state.d14+';'+this.state.d15+';'+this.state.d16+'\n';
-                let cashRow4 = 'Total;'+this.state.e1+';'+this.state.e2+';'+this.state.e3+';'+this.state.e4+';'
-                    +this.state.e5+';'+this.state.e6+';'+this.state.e7+';'+this.state.e8+';'+this.state.e9+';'+this.state.e10+';'+this.state.e11+';'+this.state.e12+';'+this.state.e13+';'+this.state.e14+';'+this.state.e15+';'+this.state.e16+'\n';
-                let cashRow5 = 'Net to Client 65%;'+ this.state.f1+';'+this.state.f2+';'+this.state.f3+';'+this.state.f4+';'+this.state.f5+';'+this.state.f6+';'+this.state.f7+';'+this.state.f8+';'+this.state.f9+';'+this.state.f10+';'+this.state.f11+';'+this.state.f12+';'+this.state.f13+';'+this.state.f14+';'
-                    +this.state.f15+';'+this.state.f16+'\n';
-                let cashRow6 = 'Discover Gross;'+this.state.g1+';'+this.state.g2+';'+this.state.g3+';'+this.state.g4+';'+this.state.g5+';'+this.state.g6+';'+this.state.g7+';'+this.state.g8+';'+this.state.g9+';'+this.state.g10+';'+this.state.g11+';'
-                    +this.state.g12+';'+this.state.g13+';'+this.state.g14+';'+this.state.g15+';'+this.state.g16+'\n';
-                let cashRow7 = 'Processing Fee @10%;'+this.state.h1+';'+this.state.h2+';'+this.state.h3+';'+this.state.h4+';'+this.state.h5+';'+this.state.h6+';'+this.state.h7+';'
-                    +this.state.h8+';'+this.state.h9+';'+this.state.h10+';'+this.state.h11+';'+this.state.h12+';'+this.state.h13+';'+this.state.h14+';'+this.state.h15+';'+this.state.h16+'\n';
-                let cashRow8 = 'Agent Fee @ 6% of DC Net;'+this.state.i1+';'+this.state.i2+';'+this.state.i3+';'
-                    +this.state.i4+';'+this.state.i5+';'+this.state.i6+';'+this.state.i7+';'+this.state.i8+';'+this.state.i9+';'+this.state.i10+';'+this.state.i11+';'+this.state.i12+';'+this.state.i13+';'+this.state.i14+';'+this.state.i15+';'+this.state.i16+'\n';
-                let cashRow9 = 'Data Cost;'+this.state.j1+';'+this.state.j2+';'+this.state.j3+';'+this.state.j4+';'+this.state.j5+';'+this.state.j6+';'+this.state.j7+';'+this.state.j8+';'+this.state.j9+';'+this.state.j10+';'+this.state.j11+';'+this.state.j12+';'+this.state.j13+';'
-                    +this.state.j14+';'+this.state.j15+';'+this.state.j16+'\n';
-                let cashRow10 = 'Total Cost;;'+this.state.k2+';'+this.state.k3+';'+this.state.k4+';'+this.state.k5+';'+this.state.k6+';'+this.state.k7+';'+this.state.k8+';'+this.state.k9+';'+this.state.k10+';'+this.state.k11+';'
-                    +this.state.k12+';'+this.state.k13+';'+this.state.k14+';'+this.state.k15+';'+this.state.k16+'\n';
-                let cashRow11 = 'Discover Claims EBITDA Return;'+this.state.kk1+';'+this.state.kk2+';'+this.state.kk3+';'+this.state.kk4+';'+this.state.kk5+';'+this.state.kk6+';'+this.state.kk7+';'
-                    +this.state.kk8+';'+this.state.kk9+';'+this.state.kk10+';'+this.state.kk11+';'+this.state.kk12+';'+this.state.kk13+';'+this.state.kk14+';'+this.state.kk15+';'+this.state.kk16+'\n\n';
-                let sysHeaderTable1 = ';2019 Billed Charges;Estimated Annual;Estimated Legacy;Estimated Quarterly Value\n';
-                let sysTable1row1 = 'CC Charges;'+'$91,200,000'+';'+'$91,200,000'+';'+'$736,700,000'+';'+'$22,800,000\n';
-                let sysTable1row2 = 'UCC Charges;'+'$87,800,000'+';'+'$87,800,000'+';'+'$305,400,000'+';'+'$21,950,000\n';
-                let sysTable1row3 = 'Total;'+ '$179,000,000'+';'+'$179,000,000'+';'+'$1,042,100,000'+';'+'$44,750,000\n\n';
-                let sysHeaderTable2 = 'Year;2016;2017;2018;2019;Total\n';
-                let sysTable2row1 = 'Charity Charges;$432,000,000;$105,000,000;$108,500,000;$91,200,000;$736,700,000\n';
-                let sysTable2row2 = 'UCC - Non-Medicare & Non-Reimbursable Bad Debt Costs;$16,000,000;$16,500,000;$21,900,000;$21,950,000;$76,350,000\n';
-                let sysTable2row3 = 'UCC Charges;$64,000,000;$66,000,000;$87,600,000;$87,800,000;$305,400,000\n';
-                let sysTable2row4 = 'Total;;;;$179,000,000;$1,042,100,000\n\n';
-                let sysHeaderTable3 = 'Client Values;Legacy Accounts; Quarterly Forward Flow;Phase\n';
-                let sysTable3row1 = 'Client\'s Pursuable value;'+this.state.l1+';'+this.state.l4+';'+'Phase I\n';
-                let sysTable3row2 = 'Number of Pursuable accounts;'+this.state.l2+';'+this.state.w2+';Phase I\n';
-                let sysTable3row3 = 'Average Visit Value (calculated from above);'+ this.state.w3+';'+this.state.w3+';Phase I\n';
-                let sysTable3row4 = 'Average QI Value;'+this.state.w6+';'+this.state.w6+';Phase I\n';
-                let sysTable3row5 = 'Actual Qualified Inventory;'+this.state.metrics[6].Actual+';'+this.state.metrics[6].Actual__1+';'+ 'Phase I\n';
-                let sysTable3row6 = 'Eligible for Insurance Discovery;'+this.state.metrics[9].Actual+';'+this.state.metrics[9].Actual__1+';'+'Phase I\n';
-                let sysTable3row7 = 'Courthouse Discovery Average Value;'+this.state.metrics[23].Actual+';'+ this.state.metrics[23].Actual__1+';Phase II\n';
-                let sysTable3row8 = 'Successful Insurance Discoveries;'+this.state.metrics[16].Actual+';'+this.state.metrics[16].Actual__1+';Phase II\n';
-                let sysTable3row9 = 'Successful Courthouse Discoveries;'+ this.state.metrics[24].Actual+';'+this.state.metrics[24].Actual__1+';Phase II\n';
-                let sysTable3row10 = 'Verisk 1st Party Find Rate;50%;50%;Phase II\n';
-                let sysTable3row11 = 'Verisk Pre-Lawsuit Find Rate (TPL);50%;50%;Phase II\n';
-                let sysTable3row12 = 'Approval (for accounts needing approval);90%;90%;Phase II\n';
-                let sysTable3row13 = 'Recovery Success Rate 1st party count;61%;61%;Phase III\n';
-                let sysTable3row14 = 'Recovery Success Rate Pre-Lawsuit TPL count;61%;61%;Phase III\n';
-                let sysTable3row15 = 'Recovery Success Rate Lawsuit TPL count;61%;61%;Phase III\n';
-                let sysTable3row16 = 'Recovery Success Rate 1st party value;35%;35%;Phase III\n';
-                let sysTable3row17 = 'Recovery Success Rate Pre-Lawsuit TPL value;35%;35%;Phase III\n';
-                let sysTable3row18 = 'Recovery Success Rate Lawsuit TPL value;35%;35%;Phase III\n\n';
-                let legHeaderTable1 = 'Stage;Total Billed Charges Charity;Number of Patient Accounts;Average Value;As a % of Previous Stage;Cash Recovery;% of Total UCC\n';
-                let legTable1row1 = 'No Patient Contact or TPL Insurance Found;'+this.state.l1+';'+this.state.l2+';'+this.state.l3+';;;100%\n';
-                let legTable1row2 = 'Qualified Inventory \"QI\";'+this.state.l4+';'+this.state.l5+';'+this.state.l6+';'+this.state.metrics[6].Actual+';;\n';
-                let legTable1row3 = 'Eligible for Insurance Discovery;'+this.state.l8+';'+this.state.l9+';;'+this.state.metrics[9].Actual+';;;\n';
-                let legTable1row4 = 'Successful Insurance Discoveries;'+ this.state.l11+';'+this.state.l12+';'+this.state.l13+';'+this.state.metrics[16].Actual+';;;\n';
-                let legTable1row5 = 'Eligible for Courthouse Discovery;'+this.state.l15+';'+this.state.l16+';;Calculation;;;\n';
-                let legTable1row6 = 'Successful Courthouse Discoveries;'+this.state.l17+';'+this.state.l18+';'+this.state.l19+';' + this.state.metrics[24].Actual+';;;\n';
-                let legTable1row7 = 'Bills - 1st Party Insurance Claims (Insurance Discoveries);'+this.state.l21+';'+this.state.l22+';'+this.state.l23+';'+'Recovered Value @ 35% of billed charges;'+this.state.l24+';'+this.state.l25+'\n';
-                let legTable1row8 = 'Liens - 3rd Party Claims & Lawsuits (Insurance Discoveries);' +this.state.l26+';'+this.state.l27+';'+this.state.l28+';'+'Recovered Value @ 35% of billed charges;'+this.state.l29+';'+this.state.l30+'\n';
-                let legTable1row9 = 'Liens - Lawsuit (Courthouse Discoveries);'+this.state.l31+';'+this.state.l32+';'+this.state.l33+';'+ 'Recovered Value @ 35% of billed charges;'+this.state.l34+';'+this.state.l35+'\n';
-                let legTable1row10 = 'Total Recovery;;;;;'+this.state.l36+';'+this.state.l37+'\n\n';
-                let legHeaderTable2 = 'Recovery Period Lawsuit Liens;Recovery Period Claims Liens;Recovery Period Claim Bills;\n';
-                let legTable2row1 = 'Lawsuit Liens year 1 - 50%;'+ 'Claims Liens year 1 - 50%;Claim Bills year 1 - 90%\n';
-                let legTable2row2 = 'Lawsuit Liens year 2 - 25%;Claims Liens year 2 - 42%;Claim Bills year 2 - 10%\n';
-                let legTable2row3 = 'Lawsuit Liens year 3 - 20%;Claims Liens year 3 - 8%;0%\n';
-                let legTable2row4 = 'Lawsuit Liens year 3+ - 5%;0%;0%\n\n';
-                let forHeaderTable1 = 'Stage;Total Billed Charges Charity;Number of Patient Accounts;Average Value;As a % of Previous Stage;Cash Recovery;% of Total UCC\n';
-                let forTable1row1 = 'No Patient Contact or TPL Insurance Found;'+this.state.w1+';'+this.state.w2+';'+this.state.w3+';;;100%\n';
-                let forTable1row2 = 'Qualified Inventory \"QI\";'+this.state.w4+';'+this.state.w5+';'+this.state.w6+';'+this.state.metrics[6].Actual__1+';;\n';
-                let forTable1row3 = 'Eligible for Insurance Discovery;'+this.state.w8+';'+this.state.w9+';;'+this.state.metrics[9].Actual__1+';;;\n';
-                let forTable1row4 = 'Successful Insurance Discoveries;'+ this.state.w11+';'+this.state.w12+';'+this.state.w13+';'+this.state.metrics[16].Actual__1+';;;\n';
-                let forTable1row5 = 'Eligible for Courthouse Discovery;'+this.state.w15+';'+this.state.w16+';;Calculation;;;\n';
-                let forTable1row6 = 'Successful Courthouse Discoveries;'+this.state.w17+';'+this.state.w18+';'+this.state.w19+';'+this.state.metrics[24].Actual__1+';;;\n';
-                let forTable1row7 = 'Bills - 1st Party Insurance Claims (Insurance Discoveries);'+this.state.w21+';'+this.state.w22+';'+this.state.w23+';'+'Recovered Value @ 35% of billed charges;'+this.state.w24+';'+this.state.w25+'\n';
-                let forTable1row8 = 'Liens - 3rd Party Claims & Lawsuits (Insurance Discoveries);' +this.state.w26+';'+this.state.w27+';'+this.state.w28+';'+'Recovered Value @ 35% of billed charges;'+this.state.w29+';'+this.state.w30+'\n';
-                let forTable1row9 = 'Liens - Lawsuit (Courthouse Discoveries);'+this.state.w31+';'+this.state.w32+';'+this.state.w33+';'+ 'Recovered Value @ 35% of billed charges;'+this.state.w34+';'+this.state.w35+'\n';
-                let forTable1row10 = 'Total Recovery;;;;;'+this.state.w36+';'+this.state.w37+'\n\n';
-                let forHeaderTable2 = 'Recovery Period Lawsuit Liens;Recovery Period Claims Liens;Recovery Period Claim Bills\n';
-                let forTable2row1 = 'Lawsuit Liens year 1 - 50%;Claims Liens year 1 - 50%;Claim Bills year 1 - 90%\n';
-                let forTable2row2 = 'Lawsuit Liens year 2 - 25%;Claims Liens year 2 - 42%;Claim Bills year 2 - 10%\n';
-                let forTable2row3 = 'Lawsuit Liens year 3 - 20%;Claims Liens year 3 - 8%;0%\n';
-                let forTable2row4 = 'Lawsuit Liens year 3+ - 5%;0%;0%\n\n';
-                let forHeaderTable3 = 'Quarter 1;Quarter 2;Quarter 3;Quarter 4;Year 1;Quarter 5;Quarter 6;Quarter 7;Quarter 8;Year 2;Quarter 9;Quarter 10;Quarter 11;Quarter 12;Year 3;Year 3+ Remaining\n';
-                let forTable3row1 = 'Recovery Period Claim Bills;0.000%;'+ '27.000%;29.700%;33.300%;90.000%;2.800%;2.700%;2.700%;1.800%;10.000%;0.000%;0.000%;0.000%;0.000%;0.000%;0.000%\n';
-                let forTable3row2 = 'Recovery Period Claim Liens;0.000%;12.500%;15.000%;22.500%;50.000%;21.250%;14.500%;3.750%;2.500%;42.000%;2.100%;2.100%;2.100%;'+ '1.700%;8.000%;0.000%\n';
-                let forTable3row3 = 'Recovery Period Lawsuit Liens;0.000%;12.500%;15.000%;22.500%;50.000%;8.250%;8.250%;4.500%;4.000%;25.000%;5.000%;5.000%;5.000%;5.000%;20.000%;5.000%\n';
-                let opDataDer = '';
-                let sysDataDer = '';
-                let cashDataDer = '';
-                let legDataDer = '';
-                let forDataDer = '';
-                if (this.state.opCheckboxChecked){opDataDer = opAssData;}
-                if (this.state.sysCheckboxChecked){
-                    if(this.state.sysCheckboxChecked1){
-                        let i;
-                        sysDataDer += sysHeaderTable1;
-                        for(i = this.state.value1[0];i < this.state.value1[1]+1;i++){
-                            if(i===1){sysDataDer+=sysTable1row1}
-                            if(i===2){sysDataDer+=sysTable1row2}
-                            if(i===3){sysDataDer+=sysTable1row3}
-                        }
-                        if(sysDataDer.charAt(sysDataDer.length-1)!== '\n' || sysDataDer.charAt(sysDataDer.length-2)!== '\n'){
-                            sysDataDer+='\n';
-                        }
-                    }
-                    if(this.state.sysCheckboxChecked2){
-                        let i;
-                        sysDataDer += sysHeaderTable2;
-                        for(i = this.state.value2[0];i < this.state.value2[1]+1;i++){
-                            if(i===1){sysDataDer+=sysTable2row1}
-                            if(i===2){sysDataDer+=sysTable2row2}
-                            if(i===3){sysDataDer+=sysTable2row3}
-                            if(i===4){sysDataDer+=sysTable2row4}
-                        }
-                        if(sysDataDer.charAt(sysDataDer.length-1)!== '\n' || sysDataDer.charAt(sysDataDer.length-2)!== '\n'){
-                            sysDataDer+='\n';
-                        }
-                    }
-                    if(this.state.sysCheckboxChecked3){
-                        let i;
-                        sysDataDer += sysHeaderTable3;
-                        for(i = this.state.value3[0];i < this.state.value3[1]+1;i++){
-                            if(i===1){sysDataDer+=sysTable3row1}
-                            if(i===2){sysDataDer+=sysTable3row2}
-                            if(i===3){sysDataDer+=sysTable3row3}
-                            if(i===4){sysDataDer+=sysTable3row4}
-                            if(i===5){sysDataDer+=sysTable3row5}
-                            if(i===6){sysDataDer+=sysTable3row6}
-                            if(i===7){sysDataDer+=sysTable3row7}
-                            if(i===8){sysDataDer+=sysTable3row8}
-                            if(i===9){sysDataDer+=sysTable3row9}
-                            if(i===10){sysDataDer+=sysTable3row10}
-                            if(i===11){sysDataDer+=sysTable3row11}
-                            if(i===12){sysDataDer+=sysTable3row12}
-                            if(i===13){sysDataDer+=sysTable3row13}
-                            if(i===14){sysDataDer+=sysTable3row14}
-                            if(i===15){sysDataDer+=sysTable3row15}
-                            if(i===16){sysDataDer+=sysTable3row16}
-                            if(i===17){sysDataDer+=sysTable3row17}
-                            if(i===18){sysDataDer+=sysTable3row18}
-                        }
-                        if(sysDataDer.charAt(sysDataDer.length-1)!== '\n' || sysDataDer.charAt(sysDataDer.length-2)!== '\n'){
-                            sysDataDer+='\n';
-                        }
-                    }
-                    if(this.state.sysCheckboxChecked4){
-                        let i;
-                        for(i = this.state.value31[0];i < this.state.value31[1]+1;i++){
-                            if(i===1){sysDataDer+='Verisk Rate;$8.50\n'};
-                            if(i===2){sysDataDer+='Westlaw Rate;$0.30\n\n';}
-                        }
-                        if(sysDataDer.charAt(sysDataDer.length-1)!== '\n' || sysDataDer.charAt(sysDataDer.length-2)!== '\n'){
-                            sysDataDer+='\n';
-                        }
-                    }
-                    if(this.state.sysCheckboxChecked5){
-                        sysDataDer+='Legacy / Lookback;Phase;Amount;Actual Timing & Comments;Forward Flow;Amount;Actual Timing & Comments\n';
-                        let i;
-                        for(i = this.state.value32[0];i < this.state.value32[1]+1;i++){
-                            sysDataDer+=this.state.metrics[i-1]["Legacy / Lookback"]+';'+this.state.metrics[i-1]["Phase"]+';'+this.state.metrics[i-1]["Actual"]+';'+this.state.metrics[i-1]["Actual Timing & Comments"]+';'+this.state.metrics[i-1]["Forward Flow"]+';'+this.state.metrics[i-1]["Actual__1"]+';'+this.state.metrics[i-1]["Actual\" Timing & Comments"]+'\n';
-                        }
-                        sysDataDer+='\n';
-                    }
-                }
-                if(this.state.caCheckboxChecked){
-                    let i;
-                    cashDataDer = cashHeader;
-                    for(i=this.state.value4[0];i<this.state.value4[1]+1;i++){
-                        if(i===1){cashDataDer+=cashRow1}
-                        if(i===2){cashDataDer+=cashRow2}
-                        if(i===3){cashDataDer+=cashRow3}
-                        if(i===4){cashDataDer+=cashRow4}
-                        if(i===5){cashDataDer+=cashRow5}
-                        if(i===6){cashDataDer+=cashRow6}
-                        if(i===7){cashDataDer+=cashRow7}
-                        if(i===8){cashDataDer+=cashRow8}
-                        if(i===9){cashDataDer+=cashRow9}
-                        if(i===10){cashDataDer+=cashRow10}
-                        if(i===11){cashDataDer+=cashRow11}
-                    }
-                    if(cashDataDer.charAt(cashDataDer.length-1)!== '\n' || cashDataDer.charAt(cashDataDer.length-2)!== '\n'){
-                        cashDataDer+='\n';
-                    }
-                }
-                if (this.state.legCheckboxChecked) {
-                    if (this.state.legCheckboxChecked1) {
-                        let i;
-                        legDataDer += legHeaderTable1;
-                        for (i = this.state.value5[0]; i < this.state.value5[1]+1; i++) {
-                            if(i===1){legDataDer+=legTable1row1}
-                            if(i===2){legDataDer+=legTable1row2}
-                            if(i===3){legDataDer+=legTable1row3}
-                            if(i===4){legDataDer+=legTable1row4}
-                            if(i===5){legDataDer+=legTable1row5}
-                            if(i===6){legDataDer+=legTable1row6}
-                            if(i===7){legDataDer+=legTable1row7}
-                            if(i===8){legDataDer+=legTable1row8}
-                            if(i===9){legDataDer+=legTable1row9}
-                            if(i===10){legDataDer+=legTable1row10}
-                        }
-                        if(legDataDer.charAt(legDataDer.length-1)!== '\n' || legDataDer.charAt(legDataDer.length-2)!== '\n'){
-                            legDataDer+='\n';
-                        }
-                    }
-                    if (this.state.legCheckboxChecked2) {
-                        let i;
-                        legDataDer += legHeaderTable2;
-                        for (i = this.state.value6[0]; i < this.state.value6[1]+1; i++) {
-                            if(i===1){legDataDer+=legTable2row1}
-                            if(i===2){legDataDer+=legTable2row2}
-                            if(i===3){legDataDer+=legTable2row3}
-                            if(i===4){legDataDer+=legTable2row4}
-                        }
-                        if(legDataDer.charAt(legDataDer.length-1)!== '\n' || legDataDer.charAt(legDataDer.length-2)!== '\n'){
-                            legDataDer+='\n';
-                        }
-                    }
-                }
-                if (this.state.forCheckboxChecked) {
-                    if (this.state.forCheckboxChecked1) {
-                        forDataDer+=forHeaderTable1;
-                        let i;
-                        for (i = this.state.value7[0]; i < this.state.value7[1]+1; i++) {
-                            if(i===1){forDataDer+=forTable1row1}
-                            if(i===2){forDataDer+=forTable1row2}
-                            if(i===3){forDataDer+=forTable1row3}
-                            if(i===4){forDataDer+=forTable1row4}
-                            if(i===5){forDataDer+=forTable1row5}
-                            if(i===6){forDataDer+=forTable1row6}
-                            if(i===7){forDataDer+=forTable1row7}
-                            if(i===8){forDataDer+=forTable1row8}
-                            if(i===9){forDataDer+=forTable1row9}
-                            if(i===10){forDataDer+=forTable1row10}
-                        }
-                        if(forDataDer.charAt(forDataDer.length-1)!== '\n'|| forDataDer.charAt(forDataDer.length-2)!== '\n'){
-                            forDataDer+='\n';
-                        }
-                    }
-                    if (this.state.forCheckboxChecked2) {
-                        let i;
-                        forDataDer += forHeaderTable2;
-                        for (i = this.state.value8[0]; i < this.state.value8[1]+1; i++) {
-                            if(i===1){forDataDer+=forTable2row1}
-                            if(i===2){forDataDer+=forTable2row2}
-                            if(i===3){forDataDer+=forTable2row3}
-                            if(i===4){forDataDer+=forTable2row4}
-                        }
-                        if(forDataDer.charAt(forDataDer.length-1)!== '\n' || forDataDer.charAt(forDataDer.length-2)!== '\n'){
-                            forDataDer+='\n';
-                        }
-                    }
-                    if (this.state.forCheckboxChecked3) {
-                        let i;
-                        forDataDer += forHeaderTable3;
-                        for (i = this.state.value9[0]; i < this.state.value9[1]+1; i++) {
-                            if(i===1){forDataDer+=forTable3row1}
-                            if(i===2){forDataDer+=forTable3row2}
-                            if(i===3){forDataDer+=forTable3row3}
-                        }
-                        if(forDataDer.charAt(forDataDer.length-1)!== '\n' || forDataDer.charAt(forDataDer.length-2)!== '\n'){
-                            forDataDer+='\n';
-                        }
-                    }
-                }
-                let allText = sep+opAssData+sysData+cashData+legData+forData;
-                let customText= sep + opDataDer + sysDataDer + cashDataDer + legDataDer + forDataDer;
-                if(this.state.allCheckboxChecked && this.state.csvButton){
-                    downloadFile('text/csv', 'OpportunityAssessment.csv', allText);
-                }else{
-                    if(this.state.csvButton) {
-                        downloadFile('text/csv', 'OpportunityAssessment.csv', customText);
-                    }
-                }
-            };
-            return (
-                <div className="App" style={{margin: '0', height: '100vh', width: '100%'}} id={'pageID'} key={"SaveDivKey"}>
-                    <div style={{paddingTop: "1em"}} key={"saveDivKeyStylingOuter"}>
-                        <Table borderless>
-                            <tbody>
-                                <tr>
-                                    <th>Opportunity Assessment Calculator</th>
-                                </tr>
-                            </tbody>
-                        </Table>
-                    </div>
-                    <div style={{position: 'fixed', right: '1em', top: '4em', zIndex: '2'}} id={'dd'} key={"saveDivKeyStylingInner"}>
-                        <Dropdown direction={'left'} isOpen={this.state.dropdownOpen} toggle={toggle1}>
-                            <DropdownToggle color="primary" caret>
-                                Save
-                            </DropdownToggle>
-                            <DropdownMenu >
-                                <Form style={{paddingLeft: '.4em', paddingRight: '.4em', paddingBottom: '.4em'}}>
-                                    <Form.Check type="checkbox"  defaultChecked={this.state.allCheckboxChecked} key={Math.random()} onChange={this.allCheckbox} label="All" />
-                                    <Collapse isOpen={this.state.collapse1Open} style={{paddingBottom: '.25em'}}>
-                                    </Collapse>
-                                    <Form.Check type="checkbox" defaultChecked={this.state.opCheckboxChecked} key={Math.random()} onChange={this.opCheckbox} label="Opportunity Assessment" />
-                                    <Collapse isOpen={this.state.collapse2Open} style={{paddingBottom: '.25em'}}>
-                                    </Collapse>
-                                    <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked} key={Math.random()} onChange={this.sysCheckbox} label="System Numbers" />
-                                    <Collapse isOpen={this.state.collapse3Open} style={{paddingBottom: '.25em'}}>
-                                        <div style={{paddingLeft: '2em', paddingRight:'1em'}} key={"saveDivKeyStylingInner1"}>
-                                            <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked1} key={Math.random()} onChange={this.sysCheckbox1} label="Table 1" />
-                                            <div key={"saveDivKeyStylingInner2"}>
-                                                <Typography id="discrete-slider" gutterBottom>
-                                                    Select Data Rows
-                                                </Typography>
-                                                <Slider
-                                                    defaultValue={[1,3]}
-                                                    aria-labelledby="discrete-slider"
-                                                    valueLabelDisplay="auto"
-                                                    marks={true}
-                                                    step={1}
-                                                    min={1}
-                                                    max={3}
-                                                    width={100}
-                                                    value={this.state.value1}
-                                                    onChange={(e, newValue) => this.value1(newValue)}
-                                                />
-                                            </div>
-                                            <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked2} key={Math.random()} onChange={this.sysCheckbox2} label="Table 2" />
-                                            <div key={"saveDivKeyStylingInner3"}>
-                                                <Typography id="discrete-slider" gutterBottom>
-                                                    Select Data Rows
-                                                </Typography>
-                                                <Slider
-                                                    defaultValue={[1,4]}
-                                                    aria-labelledby="discrete-slider"
-                                                    valueLabelDisplay="auto"
-                                                    marks={true}
-                                                    step={1}
-                                                    min={1}
-                                                    max={4}
-                                                    width={300}
-                                                    value={this.state.value2}
-                                                    onChange={(e, newValue) => this.value2(newValue)}
-                                                />
-                                            </div>
-                                            <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked3} key={Math.random()} onChange={this.sysCheckbox3} label="Client Values" />
-                                            <div>
-                                                <Typography id="discrete-slider" gutterBottom>
-                                                    Select Data Rows
-                                                </Typography>
-                                                <Slider
-                                                    defaultValue={[1,18]}
-                                                    aria-labelledby="discrete-slider"
-                                                    valueLabelDisplay="auto"
-                                                    marks={true}
-                                                    step={1}
-                                                    min={1}
-                                                    max={18}
-                                                    width={300}
-                                                    value={this.state.value3}
-                                                    onChange={(e, newValue) => this.value3(newValue)}
-                                                />
-                                            </div>
-                                            <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked4} key={Math.random()} onChange={this.sysCheckbox4} label="Verisk / Westlaw Rates" />
-                                            <div key={"saveDivKeyStylingInner4"}>
-                                                <Typography id="discrete-slider" gutterBottom>
-                                                    Select Data Rows
-                                                </Typography>
-                                                <Slider
-                                                    defaultValue={[1,2]}
-                                                    aria-labelledby="discrete-slider"
-                                                    valueLabelDisplay="auto"
-                                                    marks={true}
-                                                    step={1}
-                                                    min={1}
-                                                    max={2}
-                                                    width={300}
-                                                    value={this.state.value31}
-                                                    onChange={(e, newValue) => this.value31(newValue)}
-                                                />
-                                            </div>
-                                            <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked5} key={Math.random()} onChange={this.sysCheckbox5} label="Table 5" />
-                                            <div>
-                                                <Typography id="discrete-slider" gutterBottom>
-                                                    Select Data Rows
-                                                </Typography>
-                                                <Slider
-                                                    defaultValue={[1,58]}
-                                                    aria-labelledby="discrete-slider"
-                                                    valueLabelDisplay="auto"
-                                                    marks={false}
-                                                    step={1}
-                                                    min={1}
-                                                    max={58}
-                                                    width={300}
-                                                    value={this.state.value32}
-                                                    onChange={(e, newValue) => this.value32(newValue)}
-                                                />
-                                            </div>
-                                        </div>
-                                    </Collapse>
-                                    <Form.Check defaultChecked={this.state.caCheckboxChecked} onChange={this.toggleCashBox} key={Math.random()} type="checkbox" label="Cash Flow" />
-                                    <Collapse isOpen={this.state.collapse4Open} style={{paddingTop: '.4em', paddingBottom: '.25em'}}>
-                                        <div style={{paddingLeft: '2em',paddingRight: '1em'}} key={"saveDivKeyStylingCollapse1"}>
-                                            <Typography id="discrete-slider" gutterBottom>
-                                                Select Data Rows
-                                            </Typography>
-                                            <Slider
-                                                defaultValue={[1,11]}
-                                                aria-labelledby="discrete-slider"
-                                                valueLabelDisplay="auto"
-                                                marks={true}
-                                                step={1}
-                                                min={1}
-                                                max={11}
-                                                width={300}
-                                                value={this.state.value4}
-                                                onChange={(e, newValue) => this.value4(newValue)}
-                                            />
-                                        </div>
-                                    </Collapse>
-                                    <Form.Check type="checkbox" defaultChecked={this.state.legCheckboxChecked} key={Math.random()} onChange={this.legCheckbox} label="CC Legacy Data" />
-                                    <Collapse isOpen={this.state.collapse5Open} style={{paddingBottom: '.25em'}}>
-                                        <div style={{paddingLeft: '2em', paddingRight:'1em'}} key={"saveDivKeyStylingCollapse1"}>
-                                            <Form.Check type="checkbox" defaultChecked={this.state.legCheckboxChecked1} key={Math.random()} onChange={this.legCheckbox1} label="Table 1" />
-                                            <Typography id="discrete-slider" gutterBottom>
-                                                Select Data Rows
-                                            </Typography>
-                                            <Slider
-                                                defaultValue={[1,10]}
-                                                aria-labelledby="discrete-slider"
-                                                valueLabelDisplay="auto"
-                                                marks={true}
-                                                step={1}
-                                                min={1}
-                                                max={10}
-                                                width={300}
-                                                value={this.state.value5}
-                                                onChange={(e, newValue) => this.value5(newValue)}
-                                            />
-                                            <Form.Check type="checkbox" defaultChecked={this.state.legCheckboxChecked2} key={Math.random()} onChange={this.legCheckbox2} label="Table 2" />
-                                            <Typography id="discrete-slider" gutterBottom>
-                                                Select Data Rows
-                                            </Typography>
-                                            <Slider
-                                                defaultValue={[1,4]}
-                                                aria-labelledby="discrete-slider"
-                                                valueLabelDisplay="auto"
-                                                marks={true}
-                                                step={1}
-                                                min={1}
-                                                max={4}
-                                                width={300}
-                                                value={this.state.value6}
-                                                onChange={(e, newValue) => this.value6(newValue)}
-                                            />
-                                        </div>
-                                    </Collapse>
-                                    <Form.Check type="checkbox" defaultChecked={this.state.forCheckboxChecked} key={Math.random()} onChange={this.forCheckbox} label="CC Forward Flow" />
-                                    <Collapse isOpen={this.state.collapse6Open} style={{paddingBottom: '.25em'}}>
-                                        <div style={{paddingLeft: '2em', paddingRight:'1em'}} key={"saveDivKeyStylingCollapse3"}>
-                                            <Form.Check type="checkbox"  defaultChecked={this.state.forCheckboxChecked1} key={Math.random()} onChange={this.forCheckbox1} label="Table 1" />
-                                            <Typography id="discrete-slider" gutterBottom>
-                                                Select Data Rows
-                                            </Typography>
-                                            <Slider
-                                                defaultValue={[1,10]}
-                                                aria-labelledby="discrete-slider"
-                                                valueLabelDisplay="auto"
-                                                marks={true}
-                                                step={1}
-                                                min={1}
-                                                max={10}
-                                                width={300}
-                                                value={this.state.value7}
-                                                onChange={(e, newValue) => this.value7(newValue)}
-                                            />
-                                            <Form.Check type="checkbox" defaultChecked={this.state.forCheckboxChecked2} key={Math.random()} onChange={this.forCheckbox2} label="Table 2" />
-                                            <Typography id="discrete-slider" gutterBottom>
-                                                Select Data Rows
-                                            </Typography>
-                                            <Slider
-                                                defaultValue={[1,4]}
-                                                aria-labelledby="discrete-slider"
-                                                valueLabelDisplay="auto"
-                                                marks={true}
-                                                step={1}
-                                                min={1}
-                                                max={4}
-                                                width={300}
-                                                value={this.state.value8}
-                                                onChange={(e, newValue) => this.value8(newValue)}
-                                            />
-                                            <Form.Check type="checkbox"  defaultChecked={this.state.forCheckboxChecked3} key={Math.random()} onChange={this.forCheckbox3} label="Table 3" />
-                                            <Typography id="discrete-slider" gutterBottom>
-                                                Select Data Rows
-                                            </Typography>
-                                            <Slider
-                                                defaultValue={[1,3]}
-                                                aria-labelledby="discrete-slider"
-                                                valueLabelDisplay="auto"
-                                                marks={true}
-                                                step={1}
-                                                min={1}
-                                                max={3}
-                                                width={300}
-                                                value={this.state.value9}
-                                                onChange={(e, newValue) => this.value9(newValue)}
-                                            />
-                                        </div>
-                                    </Collapse>
-                                    <DropdownItem divider />
-                                    <FormGroup check style={{paddingLeft: '1.255em', paddingBottom: '.5em'}}>
-                                    <Label check>
-                                        <Input type="radio" name="radio1" value={this.state.csvButton} onChange={this.toggleCSV} defaultChecked/>{' '}
-                                        CSV
-                                    </Label>
-                                    </FormGroup>
-                                    <Button color="success" onClick={toggleSubmit}>Submit</Button>
-                                </Form>
-                            </DropdownMenu>
-                        </Dropdown>
-                    </div>
-                    {this.tabsNov()}
+            return(
+                <div className="App">
+                    {this.saveButton()}
                 </div>
             );
         }
@@ -1760,7 +1177,7 @@ class App extends Component {
             return (
                 <div className="App">
                     {this.dropDown()}
-                    {this.tabsBarn()}
+                    <Client2 />
                 </div>
             );
         }
@@ -1845,6 +1262,598 @@ class App extends Component {
             );
         }
     }
+    saveButton(){
+        const toggle1 = () => {
+            const current = this.state.dropdownOpen;
+            this.setState({dropdownOpen: !current});
+
+        };
+        const togglePDF = () => {
+            const current8 = this.state.pdfClicked;
+            this.setState({pdfClicked: true});
+            this.setState({csvClicked: false});
+        }
+        const toggleSubmit = () => {
+            const { Parser } = require('json2csv');
+            const json2csvParser = new Parser({ delimiter: ';' });
+            const metricsCSV = json2csvParser.parse(this.state.metrics);
+            let sep = 'sep=;\n';
+            let opAssData = 'Quarterly Client Data;Estimated Legacy Recovery;Legacy Data - Verisk Count; Legacy Data - West Law Count; ' +
+                'One Time (Legacy) Verisk Cost;One Time (Legacy) Westlaw Cost;One Time Total Legacy Data Cost;Qtrly Forward Flow Accts - Verisk;' +
+                'Qtrly Forward Flow Accts - Westlaw;Quarterly Forward Flow - Verisk Cost; Quarterly Forward Flow - Westlaw Cost; ' +
+                'Verisk and Westlaw Forward Flow Quarterly Cost; Quarterly - Client Potential Recovery;' + 'Overall - Client Potential Recovery;' +
+                'Total UCC & CC Charges; Discover Claims EBITDA Return;Discover Claims EBITDA Return %' + '\n' +
+                this.state.v1 + ';' + this.state.v2 + ';' + this.state.v3 + ';' + this.state.v4 + ';' + this.state.v5 + ';' + this.state.v6 + ';' + this.state.v7 +
+                ';' + this.state.v8 + ';' + this.state.v9 + ';' + this.state.v10 + ';' + this.state.v11 + ';' + this.state.v12 + ';' +
+                this.state.v13 + ';' + this.state.v14 + ';' + this.state.v15 + ';' + this.state.v16 + ';' + this.state.v17 +'\n'+'\n';
+            let sysData = ';2019 Billed Charges;Estimated Annual;Estimated Legacy;Estimated Quarterly Value\nCC Charges;'+'$91,200,000'+';'+'$91,200,000'+';'+'$736,700,000'+';'+'$22,800,000\n'
+                +'UCC Charges;'+'$87,800,000'+';'+'$87,800,000'+';'+'$305,400,000'+';'+'$21,950,000\n'
+                +'Total;'+ '$179,000,000'+';'+'$179,000,000'+';'+'$1,042,100,000'+';'+'$44,750,000\n\n'+
+                'Year;2016;2017;2018;2019;Total\nCharity Charges;$432,000,000;$105,000,000;$108,500,000;$91,200,000;$736,700,000\nUCC - Non-Medicare & Non-Reimbursable Bad Debt Costs;$16,000,000;$16,500,000;$21,900,000;$21,950,000;$76,350,000' +
+                '\nUCC Charges;$64,000,000;$66,000,000;$87,600,000;$87,800,000;$305,400,000\nTotal;;;;$179,000,000;$1,042,100,000\n\n'+'Client Values;Legacy Accounts;Quarterly Forward Flow;Phase\n'+
+                'Client\'s Pursuable value;'+this.state.l1+';'+this.state.l4+';'+'Phase I\n'+'Number of Pursuable accounts;'+this.state.l2+';'+this.state.w2+';Phase I\n'+'Average Visit Value (calculated from above);'+
+                this.state.w3+';'+this.state.w3+';Phase I\n'+'Average QI Value;'+this.state.w6+';'+this.state.w6+';Phase I\n'+'Actual Qualified Inventory;'+this.state.metrics[6].Actual+';'+this.state.metrics[6].Actual__1+';'+
+                'Phase I\n'+'Eligible for Insurance Discovery;'+this.state.metrics[9].Actual+';'+this.state.metrics[9].Actual__1+';'+'Phase I\n'+ 'Courthouse Discovery Average Value;'+this.state.metrics[23].Actual+';'+
+                this.state.metrics[23].Actual__1+';Phase II\n'+'Successful Insurance Discoveries;'+this.state.metrics[16].Actual+';'+this.state.metrics[16].Actual__1+';Phase II\n'+'Successful Courthouse Discoveries;'+
+                this.state.metrics[24].Actual+';'+this.state.metrics[24].Actual__1+';Phase II\n'+'Verisk 1st Party Find Rate;50%;50%;Phase II\nVerisk Pre-Lawsuit Find Rate (TPL);50%;50%;Phase II\n'+
+                'Approval (for accounts needing approval);90%;90%;Phase II\nRecovery Success Rate 1st party count;61%;61%;Phase III\nRecovery Success Rate Pre-Lawsuit TPL count;61%;61%;Phase III\n'+
+                'Recovery Success Rate Lawsuit TPL count;61%;61%;Phase III\nRecovery Success Rate 1st party value;35%;35%;Phase III\nRecovery Success Rate Pre-Lawsuit TPL value;35%;35%;Phase III\n'+
+                'Recovery Success Rate Lawsuit TPL value;35%;35%;Phase III\n\n'+'Verisk Rate;'+this.state.rates[0].rate+'\nWestlaw Rate;'+this.state.rates[1].rate+'\n\n'+metricsCSV+'\n\n';
+            let cashData = 'Assuming Legacy Data Received 12/30/20;Quarter Ending March 21;Quarter Ending June 21;Quarter Ending September 21;Quarter Ending December 21;Year Ending December 21;Quarter Ending March 22;Quarter Ending June 22;'+
+                'Quarter Ending  September 22;Quarter Ending December 22;Year Ending December 22;Quarter Ending March 23;Quarter Ending June 23;Quarter Ending September 23;Quarter Ending December 23;Year Ending December 23;Total Through December 23\n'+
+                'Bills;'+this.state.b1+';'+this.state.b2+';'+this.state.b3+';'+this.state.b4+';'+this.state.b5+';'+this.state.b6+';'+this.state.b7+';'+this.state.b8+';'+this.state.b9+';'+this.state.b10+';'+this.state.b11+';'+this.state.b12+';'+this.state.b13+';'
+                +this.state.b14+';'+this.state.b15+';'+this.state.b16+'\n'+'Liens;'+this.state.c1+';'+this.state.c2+';'+this.state.c3+';'+this.state.c4+';'+this.state.c5+';'+this.state.c6+';'+this.state.c7+';'+this.state.c8+';'+this.state.c9+';'+this.state.c10+';'
+                +this.state.c11+';'+this.state.c12+';'+this.state.c13+';'+this.state.c14+';'+this.state.c15+';'+this.state.c16+'\n'+'Lawsuits;'+this.state.d1+';'+this.state.d2+';'+this.state.d3+';'+this.state.d4+';'+this.state.d5+';'+this.state.d6+';'+this.state.d7+';'
+                +this.state.d8+';'+this.state.d9+';'+this.state.d10+';'+this.state.d11+';'+this.state.d12+';'+this.state.d13+';'+this.state.d14+';'+this.state.d15+';'+this.state.d16+'\n'+'Total;'+this.state.e1+';'+this.state.e2+';'+this.state.e3+';'+this.state.e4+';'
+                +this.state.e5+';'+this.state.e6+';'+this.state.e7+';'+this.state.e8+';'+this.state.e9+';'+this.state.e10+';'+this.state.e11+';'+this.state.e12+';'+this.state.e13+';'+this.state.e14+';'+this.state.e15+';'+this.state.e16+'\n'+'Net to Client 65%;'+
+                this.state.f1+';'+this.state.f2+';'+this.state.f3+';'+this.state.f4+';'+this.state.f5+';'+this.state.f6+';'+this.state.f7+';'+this.state.f8+';'+this.state.f9+';'+this.state.f10+';'+this.state.f11+';'+this.state.f12+';'+this.state.f13+';'+this.state.f14+';'
+                +this.state.f15+';'+this.state.f16+'\n'+'Discover Gross;'+this.state.g1+';'+this.state.g2+';'+this.state.g3+';'+this.state.g4+';'+this.state.g5+';'+this.state.g6+';'+this.state.g7+';'+this.state.g8+';'+this.state.g9+';'+this.state.g10+';'+this.state.g11+';'
+                +this.state.g12+';'+this.state.g13+';'+this.state.g14+';'+this.state.g15+';'+this.state.g16+'\n'+'Processing Fee @10%;'+this.state.h1+';'+this.state.h2+';'+this.state.h3+';'+this.state.h4+';'+this.state.h5+';'+this.state.h6+';'+this.state.h7+';'
+                +this.state.h8+';'+this.state.h9+';'+this.state.h10+';'+this.state.h11+';'+this.state.h12+';'+this.state.h13+';'+this.state.h14+';'+this.state.h15+';'+this.state.h16+'\n'+'Agent Fee @ 6% of DC Net;'+this.state.i1+';'+this.state.i2+';'+this.state.i3+';'
+                +this.state.i4+';'+this.state.i5+';'+this.state.i6+';'+this.state.i7+';'+this.state.i8+';'+this.state.i9+';'+this.state.i10+';'+this.state.i11+';'+this.state.i12+';'+this.state.i13+';'+this.state.i14+';'+this.state.i15+';'+this.state.i16+'\n'+
+                'Data Cost;'+this.state.j1+';'+this.state.j2+';'+this.state.j3+';'+this.state.j4+';'+this.state.j5+';'+this.state.j6+';'+this.state.j7+';'+this.state.j8+';'+this.state.j9+';'+this.state.j10+';'+this.state.j11+';'+this.state.j12+';'+this.state.j13+';'
+                +this.state.j14+';'+this.state.j15+';'+this.state.j16+'\n'+'Total Cost;;'+this.state.k2+';'+this.state.k3+';'+this.state.k4+';'+this.state.k5+';'+this.state.k6+';'+this.state.k7+';'+this.state.k8+';'+this.state.k9+';'+this.state.k10+';'+this.state.k11+';'
+                +this.state.k12+';'+this.state.k13+';'+this.state.k14+';'+this.state.k15+';'+this.state.k16+'\n'+'Discover Claims EBITDA Return;'+this.state.kk1+';'+this.state.kk2+';'+this.state.kk3+';'+this.state.kk4+';'+this.state.kk5+';'+this.state.kk6+';'+this.state.kk7+';'
+                +this.state.kk8+';'+this.state.kk9+';'+this.state.kk10+';'+this.state.kk11+';'+this.state.kk12+';'+this.state.kk13+';'+this.state.kk14+';'+this.state.kk15+';'+this.state.kk16+'\n\n';
+            let legData = 'Stage;Total Billed Charges Charity;Number of Patient Accounts;Average Value;As a % of Previous Stage;Cash Recovery;% of Total UCC\n'+'No Patient Contact or TPL Insurance Found;'+this.state.l1+';'+this.state.l2+';'+this.state.l3+';;;100%\n'+
+                'Qualified Inventory \"QI\";'+this.state.l4+';'+this.state.l5+';'+this.state.l6+';'+this.state.metrics[6].Actual+';;\n'+'Eligible for Insurance Discovery;'+this.state.l8+';'+this.state.l9+';;'+this.state.metrics[9].Actual+';;;\n'+'Successful Insurance Discoveries;'+
+                this.state.l11+';'+this.state.l12+';'+this.state.l13+';'+this.state.metrics[16].Actual+ ';;;\n'+'Eligible for Courthouse Discovery;'+this.state.l15+';'+this.state.l16+';;Calculation;;;\n'+'Successful Courthouse Discoveries;'+this.state.l17+';'+this.state.l18+';'+this.state.l19+';' + this.state.metrics[24].Actual +';;;\n'
+                +'Bills - 1st Party Insurance Claims (Insurance Discoveries);'+this.state.l21+';'+this.state.l22+';'+this.state.l23+';'+'Recovered Value @ 35% of billed charges;'+this.state.l24+';'+this.state.l25+'\n'+'Liens - 3rd Party Claims & Lawsuits (Insurance Discoveries);'
+                +this.state.l26+';'+this.state.l27+';'+this.state.l28+';'+'Recovered Value @ 35% of billed charges;'+this.state.l29+';'+this.state.l30+'\n'+'Liens - Lawsuit (Courthouse Discoveries);'+this.state.l31+';'+this.state.l32+';'+this.state.l33+';'+
+                'Recovered Value @ 35% of billed charges;'+this.state.l34+';'+this.state.l35+'\n'+';;;;Total Recovery;'+this.state.l36+';'+this.state.l37+'\n\nRecovery Period Lawsuit Liens;Recovery Period Claims Liens;Recovery Period Claim Bills;\nLawsuit Liens year 1 - 50%;'+
+                'Claims Liens year 1 - 50%;Claim Bills year 1 - 90%\nLawsuit Liens year 2 - 25%;Claims Liens year 2 - 42%;Claim Bills year 2 - 10%\nLawsuit Liens year 3 - 20%;Claims Liens year 3 - 8%;0%;\nLawsuit Liens year 3+ - 5%;0%;0%;\n\n'
+            let forData = 'Stage;Total Billed Charges Charity;Number of Patient Accounts;Average Value;As a % of Previous Stage;Cash Recovery;% of Total UCC\n'+'No Patient Contact or TPL Insurance Found;'+this.state.w1+';'+this.state.w2+';'+this.state.w3+';;;100%\n'+
+                'Qualified Inventory \"QI\";'+this.state.w4+';'+this.state.w5+';'+this.state.w6+';'+this.state.metrics[6].Actual__1+';;2.50%\n'+'Eligible for Insurance Discovery;'+this.state.w8+';'+this.state.w9+';;'+this.state.metrics[9].Actual__1+';;;\n'+'Successful Insurance Discoveries;'+
+                this.state.w11+';'+this.state.w12+';'+this.state.w13+';'+this.state.metrics[16].Actual__1+';;;\n'+'Eligible for Courthouse Discovery;'+this.state.w15+';'+this.state.w16+';;Calculation;;;\n'+'Successful Courthouse Discoveries;'+this.state.w17+';'+this.state.w18+';'+this.state.w19+';'+this.state.metrics[24].Actual__1+';;;\n'
+                +'Bills - 1st Party Insurance Claims (Insurance Discoveries);'+this.state.w21+';'+this.state.w22+';'+this.state.w23+';'+'Recovered Value @ 35% of billed charges;'+this.state.w24+';'+this.state.w25+'\n'+'Liens - 3rd Party Claims & Lawsuits (Insurance Discoveries);'
+                +this.state.w26+';'+this.state.w27+';'+this.state.w28+';'+'Recovered Value @ 35% of billed charges;'+this.state.w29+';'+this.state.w30+'\n'+'Liens - Lawsuit (Courthouse Discoveries);'+this.state.w31+';'+this.state.w32+';'+this.state.w33+';'+
+                'Recovered Value @ 35% of billed charges;'+this.state.w34+';'+this.state.w35+'\n'+';;;;Total Recovery;'+this.state.w36+';'+this.state.w37+'\n\n'+'Recovery Period Lawsuit Liens;Recovery Period Claims Liens;Recovery Period Claim Bills\n'+
+                'Lawsuit Liens year 1 - 50%;Claims Liens year 1 - 50%;Claim Bills year 1 - 90%\nLawsuit Liens year 2 - 25%;Claims Liens year 2 - 42%;Claim Bills year 2 - 10%\nLawsuit Liens year 3 - 20%;Claims Liens year 3 - 8%;0%\n'+
+                'Lawsuit Liens year 3+ - 5%;0%;0%;\n\n'+'Quarter 1;Quarter 2;Quarter 3;Quarter 4;Year 1;Quarter 5;Quarter 6;Quarter 7;Quarter 8;Year 2;Quarter 9;Quarter 10;Quarter 11;Quarter 12;Year 3;Year 3+ Remaining\n'+'Recovery Period Claim Bills;0.000%;'+
+                '27.000%;29.700%;33.300%;90.000%;2.800%;2.700%;2.700%;1.800%;10.000%;0.000%;0.000%;0.000%;0.000%;0.000%;0.000%\nRecovery Period Claim Liens;0.000%;12.500%;15.000%;22.500%;50.000%;21.250%;14.500%;3.750%;2.500%;42.000%;2.100%;2.100%;2.100%;'+
+                '1.700%;8.000%;0.000%\nRecovery Period Lawsuit Liens;0.000%;12.500%;15.000%;22.500%;50.000%;8.250%;8.250%;4.500%;4.000%;25.000%;5.000%;5.000%;5.000%;5.000%;20.000%;5.000%\n\n';
+            let cashHeader = 'Assuming Legacy Data Received 12/30/20;Quarter Ending March 21;Quarter Ending June 21;Quarter Ending September 21;Quarter Ending December 21;Year Ending December 21;Quarter Ending March 22;Quarter Ending June 22;'+
+                'Quarter Ending  September 22;Quarter Ending December 22;Year Ending December 22;Quarter Ending March 23;Quarter Ending June 23;Quarter Ending September 23;Quarter Ending December 23;Year Ending December 23;Total Through December 23\n';
+            let cashRow1 = 'Bills;'+this.state.b1+';'+this.state.b2+';'+this.state.b3+';'+this.state.b4+';'+this.state.b5+';'+this.state.b6+';'+this.state.b7+';'+this.state.b8+';'+this.state.b9+';'+this.state.b10+';'+this.state.b11+';'+this.state.b12+';'+this.state.b13+';'
+                +this.state.b14+';'+this.state.b15+';'+this.state.b16+'\n';
+            let cashRow2 = 'Liens;'+this.state.c1+';'+this.state.c2+';'+this.state.c3+';'+this.state.c4+';'+this.state.c5+';'+this.state.c6+';'+this.state.c7+';'+this.state.c8+';'+this.state.c9+';'+this.state.c10+';'
+                +this.state.c11+';'+this.state.c12+';'+this.state.c13+';'+this.state.c14+';'+this.state.c15+';'+this.state.c16+'\n';
+            let cashRow3 = 'Lawsuits;'+this.state.d1+';'+this.state.d2+';'+this.state.d3+';'+this.state.d4+';'+this.state.d5+';'+this.state.d6+';'+this.state.d7+';'
+                +this.state.d8+';'+this.state.d9+';'+this.state.d10+';'+this.state.d11+';'+this.state.d12+';'+this.state.d13+';'+this.state.d14+';'+this.state.d15+';'+this.state.d16+'\n';
+            let cashRow4 = 'Total;'+this.state.e1+';'+this.state.e2+';'+this.state.e3+';'+this.state.e4+';'
+                +this.state.e5+';'+this.state.e6+';'+this.state.e7+';'+this.state.e8+';'+this.state.e9+';'+this.state.e10+';'+this.state.e11+';'+this.state.e12+';'+this.state.e13+';'+this.state.e14+';'+this.state.e15+';'+this.state.e16+'\n';
+            let cashRow5 = 'Net to Client 65%;'+ this.state.f1+';'+this.state.f2+';'+this.state.f3+';'+this.state.f4+';'+this.state.f5+';'+this.state.f6+';'+this.state.f7+';'+this.state.f8+';'+this.state.f9+';'+this.state.f10+';'+this.state.f11+';'+this.state.f12+';'+this.state.f13+';'+this.state.f14+';'
+                +this.state.f15+';'+this.state.f16+'\n';
+            let cashRow6 = 'Discover Gross;'+this.state.g1+';'+this.state.g2+';'+this.state.g3+';'+this.state.g4+';'+this.state.g5+';'+this.state.g6+';'+this.state.g7+';'+this.state.g8+';'+this.state.g9+';'+this.state.g10+';'+this.state.g11+';'
+                +this.state.g12+';'+this.state.g13+';'+this.state.g14+';'+this.state.g15+';'+this.state.g16+'\n';
+            let cashRow7 = 'Processing Fee @10%;'+this.state.h1+';'+this.state.h2+';'+this.state.h3+';'+this.state.h4+';'+this.state.h5+';'+this.state.h6+';'+this.state.h7+';'
+                +this.state.h8+';'+this.state.h9+';'+this.state.h10+';'+this.state.h11+';'+this.state.h12+';'+this.state.h13+';'+this.state.h14+';'+this.state.h15+';'+this.state.h16+'\n';
+            let cashRow8 = 'Agent Fee @ 6% of DC Net;'+this.state.i1+';'+this.state.i2+';'+this.state.i3+';'
+                +this.state.i4+';'+this.state.i5+';'+this.state.i6+';'+this.state.i7+';'+this.state.i8+';'+this.state.i9+';'+this.state.i10+';'+this.state.i11+';'+this.state.i12+';'+this.state.i13+';'+this.state.i14+';'+this.state.i15+';'+this.state.i16+'\n';
+            let cashRow9 = 'Data Cost;'+this.state.j1+';'+this.state.j2+';'+this.state.j3+';'+this.state.j4+';'+this.state.j5+';'+this.state.j6+';'+this.state.j7+';'+this.state.j8+';'+this.state.j9+';'+this.state.j10+';'+this.state.j11+';'+this.state.j12+';'+this.state.j13+';'
+                +this.state.j14+';'+this.state.j15+';'+this.state.j16+'\n';
+            let cashRow10 = 'Total Cost;;'+this.state.k2+';'+this.state.k3+';'+this.state.k4+';'+this.state.k5+';'+this.state.k6+';'+this.state.k7+';'+this.state.k8+';'+this.state.k9+';'+this.state.k10+';'+this.state.k11+';'
+                +this.state.k12+';'+this.state.k13+';'+this.state.k14+';'+this.state.k15+';'+this.state.k16+'\n';
+            let cashRow11 = 'Discover Claims EBITDA Return;'+this.state.kk1+';'+this.state.kk2+';'+this.state.kk3+';'+this.state.kk4+';'+this.state.kk5+';'+this.state.kk6+';'+this.state.kk7+';'
+                +this.state.kk8+';'+this.state.kk9+';'+this.state.kk10+';'+this.state.kk11+';'+this.state.kk12+';'+this.state.kk13+';'+this.state.kk14+';'+this.state.kk15+';'+this.state.kk16+'\n\n';
+            let sysHeaderTable1 = ';2019 Billed Charges;Estimated Annual;Estimated Legacy;Estimated Quarterly Value\n';
+            let sysTable1row1 = 'CC Charges;'+'$91,200,000'+';'+'$91,200,000'+';'+'$736,700,000'+';'+'$22,800,000\n';
+            let sysTable1row2 = 'UCC Charges;'+'$87,800,000'+';'+'$87,800,000'+';'+'$305,400,000'+';'+'$21,950,000\n';
+            let sysTable1row3 = 'Total;'+ '$179,000,000'+';'+'$179,000,000'+';'+'$1,042,100,000'+';'+'$44,750,000\n\n';
+            let sysHeaderTable2 = 'Year;2016;2017;2018;2019;Total\n';
+            let sysTable2row1 = 'Charity Charges;$432,000,000;$105,000,000;$108,500,000;$91,200,000;$736,700,000\n';
+            let sysTable2row2 = 'UCC - Non-Medicare & Non-Reimbursable Bad Debt Costs;$16,000,000;$16,500,000;$21,900,000;$21,950,000;$76,350,000\n';
+            let sysTable2row3 = 'UCC Charges;$64,000,000;$66,000,000;$87,600,000;$87,800,000;$305,400,000\n';
+            let sysTable2row4 = 'Total;;;;$179,000,000;$1,042,100,000\n\n';
+            let sysHeaderTable3 = 'Client Values;Legacy Accounts; Quarterly Forward Flow;Phase\n';
+            let sysTable3row1 = 'Client\'s Pursuable value;'+this.state.l1+';'+this.state.l4+';'+'Phase I\n';
+            let sysTable3row2 = 'Number of Pursuable accounts;'+this.state.l2+';'+this.state.w2+';Phase I\n';
+            let sysTable3row3 = 'Average Visit Value (calculated from above);'+ this.state.w3+';'+this.state.w3+';Phase I\n';
+            let sysTable3row4 = 'Average QI Value;'+this.state.w6+';'+this.state.w6+';Phase I\n';
+            let sysTable3row5 = 'Actual Qualified Inventory;'+this.state.metrics[6].Actual+';'+this.state.metrics[6].Actual__1+';'+ 'Phase I\n';
+            let sysTable3row6 = 'Eligible for Insurance Discovery;'+this.state.metrics[9].Actual+';'+this.state.metrics[9].Actual__1+';'+'Phase I\n';
+            let sysTable3row7 = 'Courthouse Discovery Average Value;'+this.state.metrics[23].Actual+';'+ this.state.metrics[23].Actual__1+';Phase II\n';
+            let sysTable3row8 = 'Successful Insurance Discoveries;'+this.state.metrics[16].Actual+';'+this.state.metrics[16].Actual__1+';Phase II\n';
+            let sysTable3row9 = 'Successful Courthouse Discoveries;'+ this.state.metrics[24].Actual+';'+this.state.metrics[24].Actual__1+';Phase II\n';
+            let sysTable3row10 = 'Verisk 1st Party Find Rate;50%;50%;Phase II\n';
+            let sysTable3row11 = 'Verisk Pre-Lawsuit Find Rate (TPL);50%;50%;Phase II\n';
+            let sysTable3row12 = 'Approval (for accounts needing approval);90%;90%;Phase II\n';
+            let sysTable3row13 = 'Recovery Success Rate 1st party count;61%;61%;Phase III\n';
+            let sysTable3row14 = 'Recovery Success Rate Pre-Lawsuit TPL count;61%;61%;Phase III\n';
+            let sysTable3row15 = 'Recovery Success Rate Lawsuit TPL count;61%;61%;Phase III\n';
+            let sysTable3row16 = 'Recovery Success Rate 1st party value;35%;35%;Phase III\n';
+            let sysTable3row17 = 'Recovery Success Rate Pre-Lawsuit TPL value;35%;35%;Phase III\n';
+            let sysTable3row18 = 'Recovery Success Rate Lawsuit TPL value;35%;35%;Phase III\n\n';
+            let legHeaderTable1 = 'Stage;Total Billed Charges Charity;Number of Patient Accounts;Average Value;As a % of Previous Stage;Cash Recovery;% of Total UCC\n';
+            let legTable1row1 = 'No Patient Contact or TPL Insurance Found;'+this.state.l1+';'+this.state.l2+';'+this.state.l3+';;;100%\n';
+            let legTable1row2 = 'Qualified Inventory \"QI\";'+this.state.l4+';'+this.state.l5+';'+this.state.l6+';'+this.state.metrics[6].Actual+';;\n';
+            let legTable1row3 = 'Eligible for Insurance Discovery;'+this.state.l8+';'+this.state.l9+';;'+this.state.metrics[9].Actual+';;;\n';
+            let legTable1row4 = 'Successful Insurance Discoveries;'+ this.state.l11+';'+this.state.l12+';'+this.state.l13+';'+this.state.metrics[16].Actual+';;;\n';
+            let legTable1row5 = 'Eligible for Courthouse Discovery;'+this.state.l15+';'+this.state.l16+';;Calculation;;;\n';
+            let legTable1row6 = 'Successful Courthouse Discoveries;'+this.state.l17+';'+this.state.l18+';'+this.state.l19+';' + this.state.metrics[24].Actual+';;;\n';
+            let legTable1row7 = 'Bills - 1st Party Insurance Claims (Insurance Discoveries);'+this.state.l21+';'+this.state.l22+';'+this.state.l23+';'+'Recovered Value @ 35% of billed charges;'+this.state.l24+';'+this.state.l25+'\n';
+            let legTable1row8 = 'Liens - 3rd Party Claims & Lawsuits (Insurance Discoveries);' +this.state.l26+';'+this.state.l27+';'+this.state.l28+';'+'Recovered Value @ 35% of billed charges;'+this.state.l29+';'+this.state.l30+'\n';
+            let legTable1row9 = 'Liens - Lawsuit (Courthouse Discoveries);'+this.state.l31+';'+this.state.l32+';'+this.state.l33+';'+ 'Recovered Value @ 35% of billed charges;'+this.state.l34+';'+this.state.l35+'\n';
+            let legTable1row10 = 'Total Recovery;;;;;'+this.state.l36+';'+this.state.l37+'\n\n';
+            let legHeaderTable2 = 'Recovery Period Lawsuit Liens;Recovery Period Claims Liens;Recovery Period Claim Bills;\n';
+            let legTable2row1 = 'Lawsuit Liens year 1 - 50%;'+ 'Claims Liens year 1 - 50%;Claim Bills year 1 - 90%\n';
+            let legTable2row2 = 'Lawsuit Liens year 2 - 25%;Claims Liens year 2 - 42%;Claim Bills year 2 - 10%\n';
+            let legTable2row3 = 'Lawsuit Liens year 3 - 20%;Claims Liens year 3 - 8%;0%\n';
+            let legTable2row4 = 'Lawsuit Liens year 3+ - 5%;0%;0%\n\n';
+            let forHeaderTable1 = 'Stage;Total Billed Charges Charity;Number of Patient Accounts;Average Value;As a % of Previous Stage;Cash Recovery;% of Total UCC\n';
+            let forTable1row1 = 'No Patient Contact or TPL Insurance Found;'+this.state.w1+';'+this.state.w2+';'+this.state.w3+';;;100%\n';
+            let forTable1row2 = 'Qualified Inventory \"QI\";'+this.state.w4+';'+this.state.w5+';'+this.state.w6+';'+this.state.metrics[6].Actual__1+';;\n';
+            let forTable1row3 = 'Eligible for Insurance Discovery;'+this.state.w8+';'+this.state.w9+';;'+this.state.metrics[9].Actual__1+';;;\n';
+            let forTable1row4 = 'Successful Insurance Discoveries;'+ this.state.w11+';'+this.state.w12+';'+this.state.w13+';'+this.state.metrics[16].Actual__1+';;;\n';
+            let forTable1row5 = 'Eligible for Courthouse Discovery;'+this.state.w15+';'+this.state.w16+';;Calculation;;;\n';
+            let forTable1row6 = 'Successful Courthouse Discoveries;'+this.state.w17+';'+this.state.w18+';'+this.state.w19+';'+this.state.metrics[24].Actual__1+';;;\n';
+            let forTable1row7 = 'Bills - 1st Party Insurance Claims (Insurance Discoveries);'+this.state.w21+';'+this.state.w22+';'+this.state.w23+';'+'Recovered Value @ 35% of billed charges;'+this.state.w24+';'+this.state.w25+'\n';
+            let forTable1row8 = 'Liens - 3rd Party Claims & Lawsuits (Insurance Discoveries);' +this.state.w26+';'+this.state.w27+';'+this.state.w28+';'+'Recovered Value @ 35% of billed charges;'+this.state.w29+';'+this.state.w30+'\n';
+            let forTable1row9 = 'Liens - Lawsuit (Courthouse Discoveries);'+this.state.w31+';'+this.state.w32+';'+this.state.w33+';'+ 'Recovered Value @ 35% of billed charges;'+this.state.w34+';'+this.state.w35+'\n';
+            let forTable1row10 = 'Total Recovery;;;;;'+this.state.w36+';'+this.state.w37+'\n\n';
+            let forHeaderTable2 = 'Recovery Period Lawsuit Liens;Recovery Period Claims Liens;Recovery Period Claim Bills\n';
+            let forTable2row1 = 'Lawsuit Liens year 1 - 50%;Claims Liens year 1 - 50%;Claim Bills year 1 - 90%\n';
+            let forTable2row2 = 'Lawsuit Liens year 2 - 25%;Claims Liens year 2 - 42%;Claim Bills year 2 - 10%\n';
+            let forTable2row3 = 'Lawsuit Liens year 3 - 20%;Claims Liens year 3 - 8%;0%\n';
+            let forTable2row4 = 'Lawsuit Liens year 3+ - 5%;0%;0%\n\n';
+            let forHeaderTable3 = 'Quarter 1;Quarter 2;Quarter 3;Quarter 4;Year 1;Quarter 5;Quarter 6;Quarter 7;Quarter 8;Year 2;Quarter 9;Quarter 10;Quarter 11;Quarter 12;Year 3;Year 3+ Remaining\n';
+            let forTable3row1 = 'Recovery Period Claim Bills;0.000%;'+ '27.000%;29.700%;33.300%;90.000%;2.800%;2.700%;2.700%;1.800%;10.000%;0.000%;0.000%;0.000%;0.000%;0.000%;0.000%\n';
+            let forTable3row2 = 'Recovery Period Claim Liens;0.000%;12.500%;15.000%;22.500%;50.000%;21.250%;14.500%;3.750%;2.500%;42.000%;2.100%;2.100%;2.100%;'+ '1.700%;8.000%;0.000%\n';
+            let forTable3row3 = 'Recovery Period Lawsuit Liens;0.000%;12.500%;15.000%;22.500%;50.000%;8.250%;8.250%;4.500%;4.000%;25.000%;5.000%;5.000%;5.000%;5.000%;20.000%;5.000%\n';
+            let opDataDer = '';
+            let sysDataDer = '';
+            let cashDataDer = '';
+            let legDataDer = '';
+            let forDataDer = '';
+            if (this.state.opCheckboxChecked){opDataDer = opAssData;}
+            if (this.state.sysCheckboxChecked){
+                if(this.state.sysCheckboxChecked1){
+                    let i;
+                    sysDataDer += sysHeaderTable1;
+                    for(i = this.state.value1[0];i < this.state.value1[1]+1;i++){
+                        if(i===1){sysDataDer+=sysTable1row1}
+                        if(i===2){sysDataDer+=sysTable1row2}
+                        if(i===3){sysDataDer+=sysTable1row3}
+                    }
+                    if(sysDataDer.charAt(sysDataDer.length-1)!== '\n' || sysDataDer.charAt(sysDataDer.length-2)!== '\n'){
+                        sysDataDer+='\n';
+                    }
+                }
+                if(this.state.sysCheckboxChecked2){
+                    let i;
+                    sysDataDer += sysHeaderTable2;
+                    for(i = this.state.value2[0];i < this.state.value2[1]+1;i++){
+                        if(i===1){sysDataDer+=sysTable2row1}
+                        if(i===2){sysDataDer+=sysTable2row2}
+                        if(i===3){sysDataDer+=sysTable2row3}
+                        if(i===4){sysDataDer+=sysTable2row4}
+                    }
+                    if(sysDataDer.charAt(sysDataDer.length-1)!== '\n' || sysDataDer.charAt(sysDataDer.length-2)!== '\n'){
+                        sysDataDer+='\n';
+                    }
+                }
+                if(this.state.sysCheckboxChecked3){
+                    let i;
+                    sysDataDer += sysHeaderTable3;
+                    for(i = this.state.value3[0];i < this.state.value3[1]+1;i++){
+                        if(i===1){sysDataDer+=sysTable3row1}
+                        if(i===2){sysDataDer+=sysTable3row2}
+                        if(i===3){sysDataDer+=sysTable3row3}
+                        if(i===4){sysDataDer+=sysTable3row4}
+                        if(i===5){sysDataDer+=sysTable3row5}
+                        if(i===6){sysDataDer+=sysTable3row6}
+                        if(i===7){sysDataDer+=sysTable3row7}
+                        if(i===8){sysDataDer+=sysTable3row8}
+                        if(i===9){sysDataDer+=sysTable3row9}
+                        if(i===10){sysDataDer+=sysTable3row10}
+                        if(i===11){sysDataDer+=sysTable3row11}
+                        if(i===12){sysDataDer+=sysTable3row12}
+                        if(i===13){sysDataDer+=sysTable3row13}
+                        if(i===14){sysDataDer+=sysTable3row14}
+                        if(i===15){sysDataDer+=sysTable3row15}
+                        if(i===16){sysDataDer+=sysTable3row16}
+                        if(i===17){sysDataDer+=sysTable3row17}
+                        if(i===18){sysDataDer+=sysTable3row18}
+                    }
+                    if(sysDataDer.charAt(sysDataDer.length-1)!== '\n' || sysDataDer.charAt(sysDataDer.length-2)!== '\n'){
+                        sysDataDer+='\n';
+                    }
+                }
+                if(this.state.sysCheckboxChecked4){
+                    let i;
+                    for(i = this.state.value31[0];i < this.state.value31[1]+1;i++){
+                        if(i===1){sysDataDer+='Verisk Rate;$8.50\n'};
+                        if(i===2){sysDataDer+='Westlaw Rate;$0.30\n\n';}
+                    }
+                    if(sysDataDer.charAt(sysDataDer.length-1)!== '\n' || sysDataDer.charAt(sysDataDer.length-2)!== '\n'){
+                        sysDataDer+='\n';
+                    }
+                }
+                if(this.state.sysCheckboxChecked5){
+                    sysDataDer+='Legacy / Lookback;Phase;Amount;Actual Timing & Comments;Forward Flow;Amount;Actual Timing & Comments\n';
+                    let i;
+                    for(i = this.state.value32[0];i < this.state.value32[1]+1;i++){
+                        sysDataDer+=this.state.metrics[i-1]["Legacy / Lookback"]+';'+this.state.metrics[i-1]["Phase"]+';'+this.state.metrics[i-1]["Actual"]+';'+this.state.metrics[i-1]["Actual Timing & Comments"]+';'+this.state.metrics[i-1]["Forward Flow"]+';'+this.state.metrics[i-1]["Actual__1"]+';'+this.state.metrics[i-1]["Actual\" Timing & Comments"]+'\n';
+                    }
+                    sysDataDer+='\n';
+                }
+            }
+            if(this.state.caCheckboxChecked){
+                let i;
+                cashDataDer = cashHeader;
+                for(i=this.state.value4[0];i<this.state.value4[1]+1;i++){
+                    if(i===1){cashDataDer+=cashRow1}
+                    if(i===2){cashDataDer+=cashRow2}
+                    if(i===3){cashDataDer+=cashRow3}
+                    if(i===4){cashDataDer+=cashRow4}
+                    if(i===5){cashDataDer+=cashRow5}
+                    if(i===6){cashDataDer+=cashRow6}
+                    if(i===7){cashDataDer+=cashRow7}
+                    if(i===8){cashDataDer+=cashRow8}
+                    if(i===9){cashDataDer+=cashRow9}
+                    if(i===10){cashDataDer+=cashRow10}
+                    if(i===11){cashDataDer+=cashRow11}
+                }
+                if(cashDataDer.charAt(cashDataDer.length-1)!== '\n' || cashDataDer.charAt(cashDataDer.length-2)!== '\n'){
+                    cashDataDer+='\n';
+                }
+            }
+            if (this.state.legCheckboxChecked) {
+                if (this.state.legCheckboxChecked1) {
+                    let i;
+                    legDataDer += legHeaderTable1;
+                    for (i = this.state.value5[0]; i < this.state.value5[1]+1; i++) {
+                        if(i===1){legDataDer+=legTable1row1}
+                        if(i===2){legDataDer+=legTable1row2}
+                        if(i===3){legDataDer+=legTable1row3}
+                        if(i===4){legDataDer+=legTable1row4}
+                        if(i===5){legDataDer+=legTable1row5}
+                        if(i===6){legDataDer+=legTable1row6}
+                        if(i===7){legDataDer+=legTable1row7}
+                        if(i===8){legDataDer+=legTable1row8}
+                        if(i===9){legDataDer+=legTable1row9}
+                        if(i===10){legDataDer+=legTable1row10}
+                    }
+                    if(legDataDer.charAt(legDataDer.length-1)!== '\n' || legDataDer.charAt(legDataDer.length-2)!== '\n'){
+                        legDataDer+='\n';
+                    }
+                }
+                if (this.state.legCheckboxChecked2) {
+                    let i;
+                    legDataDer += legHeaderTable2;
+                    for (i = this.state.value6[0]; i < this.state.value6[1]+1; i++) {
+                        if(i===1){legDataDer+=legTable2row1}
+                        if(i===2){legDataDer+=legTable2row2}
+                        if(i===3){legDataDer+=legTable2row3}
+                        if(i===4){legDataDer+=legTable2row4}
+                    }
+                    if(legDataDer.charAt(legDataDer.length-1)!== '\n' || legDataDer.charAt(legDataDer.length-2)!== '\n'){
+                        legDataDer+='\n';
+                    }
+                }
+            }
+            if (this.state.forCheckboxChecked) {
+                if (this.state.forCheckboxChecked1) {
+                    forDataDer+=forHeaderTable1;
+                    let i;
+                    for (i = this.state.value7[0]; i < this.state.value7[1]+1; i++) {
+                        if(i===1){forDataDer+=forTable1row1}
+                        if(i===2){forDataDer+=forTable1row2}
+                        if(i===3){forDataDer+=forTable1row3}
+                        if(i===4){forDataDer+=forTable1row4}
+                        if(i===5){forDataDer+=forTable1row5}
+                        if(i===6){forDataDer+=forTable1row6}
+                        if(i===7){forDataDer+=forTable1row7}
+                        if(i===8){forDataDer+=forTable1row8}
+                        if(i===9){forDataDer+=forTable1row9}
+                        if(i===10){forDataDer+=forTable1row10}
+                    }
+                    if(forDataDer.charAt(forDataDer.length-1)!== '\n'|| forDataDer.charAt(forDataDer.length-2)!== '\n'){
+                        forDataDer+='\n';
+                    }
+                }
+                if (this.state.forCheckboxChecked2) {
+                    let i;
+                    forDataDer += forHeaderTable2;
+                    for (i = this.state.value8[0]; i < this.state.value8[1]+1; i++) {
+                        if(i===1){forDataDer+=forTable2row1}
+                        if(i===2){forDataDer+=forTable2row2}
+                        if(i===3){forDataDer+=forTable2row3}
+                        if(i===4){forDataDer+=forTable2row4}
+                    }
+                    if(forDataDer.charAt(forDataDer.length-1)!== '\n' || forDataDer.charAt(forDataDer.length-2)!== '\n'){
+                        forDataDer+='\n';
+                    }
+                }
+                if (this.state.forCheckboxChecked3) {
+                    let i;
+                    forDataDer += forHeaderTable3;
+                    for (i = this.state.value9[0]; i < this.state.value9[1]+1; i++) {
+                        if(i===1){forDataDer+=forTable3row1}
+                        if(i===2){forDataDer+=forTable3row2}
+                        if(i===3){forDataDer+=forTable3row3}
+                    }
+                    if(forDataDer.charAt(forDataDer.length-1)!== '\n' || forDataDer.charAt(forDataDer.length-2)!== '\n'){
+                        forDataDer+='\n';
+                    }
+                }
+            }
+            let allText = sep+opAssData+sysData+cashData+legData+forData;
+            let customText= sep + opDataDer + sysDataDer + cashDataDer + legDataDer + forDataDer;
+            if(this.state.allCheckboxChecked && this.state.csvButton){
+                downloadFile('text/csv', 'OpportunityAssessment.csv', allText);
+            }else{
+                if(this.state.csvButton) {
+                    downloadFile('text/csv', 'OpportunityAssessment.csv', customText);
+                }
+            }
+        };
+        return (
+            <div className="App" style={{margin: '0', height: '100vh', width: '100%'}} id={'pageID'} key={"SaveDivKey"}>
+                <div style={{paddingTop: "1.5em"}} key={"saveDivKeyStylingOuter"}>
+                    <Table borderless>
+                        <tbody>
+                        <tr>
+                            <th>Opportunity Assessment Calculator</th>
+                        </tr>
+                        </tbody>
+                    </Table>
+                </div>
+                {this.dropDown()}
+                <div style={{position: 'fixed', right: '1em', top: '4em', zIndex: '2'}} id={'dd'} key={"saveDivKeyStylingInner"}>
+                    <Dropdown direction={'left'} isOpen={this.state.dropdownOpen} toggle={toggle1}>
+                        <DropdownToggle color="primary" caret>
+                            Save
+                        </DropdownToggle>
+                        <DropdownMenu >
+                            <Form style={{paddingLeft: '.4em', paddingRight: '.4em', paddingBottom: '.4em'}}>
+                                <Form.Check type="checkbox"  defaultChecked={this.state.allCheckboxChecked} key={Math.random()} onChange={this.allCheckbox} label="All" />
+                                <Collapse isOpen={this.state.collapse1Open} style={{paddingBottom: '.25em'}}>
+                                </Collapse>
+                                <Form.Check type="checkbox" defaultChecked={this.state.opCheckboxChecked} key={Math.random()} onChange={this.opCheckbox} label="Opportunity Assessment" />
+                                <Collapse isOpen={this.state.collapse2Open} style={{paddingBottom: '.25em'}}>
+                                </Collapse>
+                                <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked} key={Math.random()} onChange={this.sysCheckbox} label="System Numbers" />
+                                <Collapse isOpen={this.state.collapse3Open} style={{paddingBottom: '.25em'}}>
+                                    <div style={{paddingLeft: '2em', paddingRight:'1em'}} key={"saveDivKeyStylingInner1"}>
+                                        <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked1} key={Math.random()} onChange={this.sysCheckbox1} label="Table 1" />
+                                        <div key={"saveDivKeyStylingInner2"}>
+                                            <Typography id="discrete-slider" gutterBottom>
+                                                Select Data Rows
+                                            </Typography>
+                                            <Slider
+                                                defaultValue={[1,3]}
+                                                aria-labelledby="discrete-slider"
+                                                valueLabelDisplay="auto"
+                                                marks={true}
+                                                step={1}
+                                                min={1}
+                                                max={3}
+                                                width={100}
+                                                value={this.state.value1}
+                                                onChange={(e, newValue) => this.value1(newValue)}
+                                            />
+                                        </div>
+                                        <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked2} key={Math.random()} onChange={this.sysCheckbox2} label="Table 2" />
+                                        <div key={"saveDivKeyStylingInner3"}>
+                                            <Typography id="discrete-slider" gutterBottom>
+                                                Select Data Rows
+                                            </Typography>
+                                            <Slider
+                                                defaultValue={[1,4]}
+                                                aria-labelledby="discrete-slider"
+                                                valueLabelDisplay="auto"
+                                                marks={true}
+                                                step={1}
+                                                min={1}
+                                                max={4}
+                                                width={300}
+                                                value={this.state.value2}
+                                                onChange={(e, newValue) => this.value2(newValue)}
+                                            />
+                                        </div>
+                                        <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked3} key={Math.random()} onChange={this.sysCheckbox3} label="Client Values" />
+                                        <div>
+                                            <Typography id="discrete-slider" gutterBottom>
+                                                Select Data Rows
+                                            </Typography>
+                                            <Slider
+                                                defaultValue={[1,18]}
+                                                aria-labelledby="discrete-slider"
+                                                valueLabelDisplay="auto"
+                                                marks={true}
+                                                step={1}
+                                                min={1}
+                                                max={18}
+                                                width={300}
+                                                value={this.state.value3}
+                                                onChange={(e, newValue) => this.value3(newValue)}
+                                            />
+                                        </div>
+                                        <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked4} key={Math.random()} onChange={this.sysCheckbox4} label="Verisk / Westlaw Rates" />
+                                        <div key={"saveDivKeyStylingInner4"}>
+                                            <Typography id="discrete-slider" gutterBottom>
+                                                Select Data Rows
+                                            </Typography>
+                                            <Slider
+                                                defaultValue={[1,2]}
+                                                aria-labelledby="discrete-slider"
+                                                valueLabelDisplay="auto"
+                                                marks={true}
+                                                step={1}
+                                                min={1}
+                                                max={2}
+                                                width={300}
+                                                value={this.state.value31}
+                                                onChange={(e, newValue) => this.value31(newValue)}
+                                            />
+                                        </div>
+                                        <Form.Check type="checkbox" defaultChecked={this.state.sysCheckboxChecked5} key={Math.random()} onChange={this.sysCheckbox5} label="Table 5" />
+                                        <div>
+                                            <Typography id="discrete-slider" gutterBottom>
+                                                Select Data Rows
+                                            </Typography>
+                                            <Slider
+                                                defaultValue={[1,58]}
+                                                aria-labelledby="discrete-slider"
+                                                valueLabelDisplay="auto"
+                                                marks={false}
+                                                step={1}
+                                                min={1}
+                                                max={58}
+                                                width={300}
+                                                value={this.state.value32}
+                                                onChange={(e, newValue) => this.value32(newValue)}
+                                            />
+                                        </div>
+                                    </div>
+                                </Collapse>
+                                <Form.Check defaultChecked={this.state.caCheckboxChecked} onChange={this.toggleCashBox} key={Math.random()} type="checkbox" label="Cash Flow" />
+                                <Collapse isOpen={this.state.collapse4Open} style={{paddingTop: '.4em', paddingBottom: '.25em'}}>
+                                    <div style={{paddingLeft: '2em',paddingRight: '1em'}} key={"saveDivKeyStylingCollapse1"}>
+                                        <Typography id="discrete-slider" gutterBottom>
+                                            Select Data Rows
+                                        </Typography>
+                                        <Slider
+                                            defaultValue={[1,11]}
+                                            aria-labelledby="discrete-slider"
+                                            valueLabelDisplay="auto"
+                                            marks={true}
+                                            step={1}
+                                            min={1}
+                                            max={11}
+                                            width={300}
+                                            value={this.state.value4}
+                                            onChange={(e, newValue) => this.value4(newValue)}
+                                        />
+                                    </div>
+                                </Collapse>
+                                <Form.Check type="checkbox" defaultChecked={this.state.legCheckboxChecked} key={Math.random()} onChange={this.legCheckbox} label="CC Legacy Data" />
+                                <Collapse isOpen={this.state.collapse5Open} style={{paddingBottom: '.25em'}}>
+                                    <div style={{paddingLeft: '2em', paddingRight:'1em'}} key={"saveDivKeyStylingCollapse1"}>
+                                        <Form.Check type="checkbox" defaultChecked={this.state.legCheckboxChecked1} key={Math.random()} onChange={this.legCheckbox1} label="Table 1" />
+                                        <Typography id="discrete-slider" gutterBottom>
+                                            Select Data Rows
+                                        </Typography>
+                                        <Slider
+                                            defaultValue={[1,10]}
+                                            aria-labelledby="discrete-slider"
+                                            valueLabelDisplay="auto"
+                                            marks={true}
+                                            step={1}
+                                            min={1}
+                                            max={10}
+                                            width={300}
+                                            value={this.state.value5}
+                                            onChange={(e, newValue) => this.value5(newValue)}
+                                        />
+                                        <Form.Check type="checkbox" defaultChecked={this.state.legCheckboxChecked2} key={Math.random()} onChange={this.legCheckbox2} label="Table 2" />
+                                        <Typography id="discrete-slider" gutterBottom>
+                                            Select Data Rows
+                                        </Typography>
+                                        <Slider
+                                            defaultValue={[1,4]}
+                                            aria-labelledby="discrete-slider"
+                                            valueLabelDisplay="auto"
+                                            marks={true}
+                                            step={1}
+                                            min={1}
+                                            max={4}
+                                            width={300}
+                                            value={this.state.value6}
+                                            onChange={(e, newValue) => this.value6(newValue)}
+                                        />
+                                    </div>
+                                </Collapse>
+                                <Form.Check type="checkbox" defaultChecked={this.state.forCheckboxChecked} key={Math.random()} onChange={this.forCheckbox} label="CC Forward Flow" />
+                                <Collapse isOpen={this.state.collapse6Open} style={{paddingBottom: '.25em'}}>
+                                    <div style={{paddingLeft: '2em', paddingRight:'1em'}} key={"saveDivKeyStylingCollapse3"}>
+                                        <Form.Check type="checkbox"  defaultChecked={this.state.forCheckboxChecked1} key={Math.random()} onChange={this.forCheckbox1} label="Table 1" />
+                                        <Typography id="discrete-slider" gutterBottom>
+                                            Select Data Rows
+                                        </Typography>
+                                        <Slider
+                                            defaultValue={[1,10]}
+                                            aria-labelledby="discrete-slider"
+                                            valueLabelDisplay="auto"
+                                            marks={true}
+                                            step={1}
+                                            min={1}
+                                            max={10}
+                                            width={300}
+                                            value={this.state.value7}
+                                            onChange={(e, newValue) => this.value7(newValue)}
+                                        />
+                                        <Form.Check type="checkbox" defaultChecked={this.state.forCheckboxChecked2} key={Math.random()} onChange={this.forCheckbox2} label="Table 2" />
+                                        <Typography id="discrete-slider" gutterBottom>
+                                            Select Data Rows
+                                        </Typography>
+                                        <Slider
+                                            defaultValue={[1,4]}
+                                            aria-labelledby="discrete-slider"
+                                            valueLabelDisplay="auto"
+                                            marks={true}
+                                            step={1}
+                                            min={1}
+                                            max={4}
+                                            width={300}
+                                            value={this.state.value8}
+                                            onChange={(e, newValue) => this.value8(newValue)}
+                                        />
+                                        <Form.Check type="checkbox"  defaultChecked={this.state.forCheckboxChecked3} key={Math.random()} onChange={this.forCheckbox3} label="Table 3" />
+                                        <Typography id="discrete-slider" gutterBottom>
+                                            Select Data Rows
+                                        </Typography>
+                                        <Slider
+                                            defaultValue={[1,3]}
+                                            aria-labelledby="discrete-slider"
+                                            valueLabelDisplay="auto"
+                                            marks={true}
+                                            step={1}
+                                            min={1}
+                                            max={3}
+                                            width={300}
+                                            value={this.state.value9}
+                                            onChange={(e, newValue) => this.value9(newValue)}
+                                        />
+                                    </div>
+                                </Collapse>
+                                <DropdownItem divider />
+                                <FormGroup check style={{paddingLeft: '1.255em', paddingBottom: '.5em'}}>
+                                    <Label check>
+                                        <Input type="radio" name="radio1" value={this.state.csvButton} onChange={this.toggleCSV} defaultChecked/>{' '}
+                                        CSV
+                                    </Label>
+                                </FormGroup>
+                                <Button color="success" onClick={toggleSubmit}>Submit</Button>
+                            </Form>
+                        </DropdownMenu>
+                    </Dropdown>
+                </div>
+                {this.tabsNov()}
+            </div>
+        );
+    }
     dropDown(){
         return(
             <Form style={{
@@ -1853,7 +1862,7 @@ class App extends Component {
                 justifyContent: 'center',
             }}>
                 <Form.Group controlId="selectHospital.ControlSelect1">
-                    <Form.Label style={{fontSize:"18px", padding: ".3%", paddingTop: "20px"}}>Select Client</Form.Label>
+                    <Form.Label style={{fontSize:"16px"}}>Select Client</Form.Label>
                     <Input className="btn-csu" type={"select"} name={"select"} style={{position: "relative", fontSize: 18, width: "370px"}}
                            onChange={(e) => this.setState({clients: e.target.value})}>
                         <option value={"Opportunity Assessment Calculator"}>Opportunity Assessment Calculator</option>
@@ -1896,7 +1905,7 @@ class App extends Component {
                 }
             }
         }
-        axios.post('http://10.45.4.200:4500/', {val: newValue, row: rowNum, col: column, met: this.state.metrics}).then(resp => {
+        axios.post('http://localhost:4500/', {val: newValue, row: rowNum, col: column, met: this.state.metrics}).then(resp => {
                 self.setState({comebackk: resp.data.main, metricsTemp: resp.data.met}, function() {
                     let ar = handleOutputStr(this.state.comebackk);
                     this.setState({rates:[
