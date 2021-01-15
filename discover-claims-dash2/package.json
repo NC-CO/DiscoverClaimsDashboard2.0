@@ -23,6 +23,8 @@
     "react-bootstrap-table2-editor": "^1.4.0",
     "react-dom": "^16.14.0",
     "react-ions": "^5.3.8",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "react-table": "^7.6.0",
     "styled-components": "^5.2.0",

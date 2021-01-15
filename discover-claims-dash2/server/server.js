@@ -20,10 +20,14 @@ app.post('/', function(req,res) {
         row = JSON.stringify(row);
         colActual = JSON.stringify(colActual);
         const spawn = require('child_process').spawn;
-        console.log(colActual);
+        console.log(+colActual);
+
         const pythonProcess = spawn('python', ['test.py', val, row, colActual]);
+
+
         pythonProcess.stdout.on('data', (data) => {
             mainData = data.toString('ascii');
+            console.log("mainData = "+mainData);
             mainData = mainData.substring(0, mainData.length - 2)
             console.log(mainData);
             let ar = mainData.split('|');
@@ -54,7 +58,7 @@ app.post('/', function(req,res) {
                 if (err) throw err;
             });
             res.json({main: mainData, met: metrics});
-        }, 2000);
+        }, 1000);
     } catch(error){
         console.error(error);
     }
