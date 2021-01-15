@@ -2073,7 +2073,7 @@ export default class Client1 extends Component {
                         <Tab>Client's DC Results</Tab>
                         <Tab>Cash Flow</Tab>
                         <Tab>CC Legacy Data</Tab>
-                        <Tab>CC Forward Floww</Tab>
+                        <Tab>CC Forward Flow</Tab>
                     </TabList>
                     <TabPanel key={"opAssessTab"}>
                         <div style={{paddingBottom : '3em'}} key={"OpAssesDiv"}>
